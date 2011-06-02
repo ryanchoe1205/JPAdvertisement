@@ -37,7 +37,7 @@
 @implementation JPAdViewController
 
 - (id) init {
-	self = [super initWithNibName:@"JPAdvertisementBannerViewController" bundle:nil];
+	self = [super init];
 	if (self) {
 	}
 	return self;

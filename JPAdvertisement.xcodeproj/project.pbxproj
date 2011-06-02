@@ -16,8 +16,16 @@
 		061174741386EB92008195C2 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0611746C1386EB91008195C2 /* Icon@2x.png */; };
 		061174751386EB92008195C2 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 0611746D1386EB91008195C2 /* iTunesArtwork */; };
 		0619F9031386ECDF00C27453 /* JPAdvertisementBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0619F8FF1386ECDF00C27453 /* JPAdvertisementBannerViewController.m */; };
-		0619F9041386ECDF00C27453 /* JPAdvertisementBannerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0619F9001386ECDF00C27453 /* JPAdvertisementBannerViewController.xib */; };
 		0619F9051386ECDF00C27453 /* JPAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0619F9021386ECDF00C27453 /* JPAdViewController.m */; };
+		061B74831398096E00D7EF79 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 061B74811398096E00D7EF79 /* MainWindow-iPad.xib */; };
+		061B74A91398167200D7EF79 /* GradesLandscapeHandheld.png in Resources */ = {isa = PBXBuildFile; fileRef = 061B74A11398167200D7EF79 /* GradesLandscapeHandheld.png */; };
+		061B74AA1398167200D7EF79 /* GradesLandscapeHandheld@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 061B74A21398167200D7EF79 /* GradesLandscapeHandheld@2x.png */; };
+		061B74AB1398167200D7EF79 /* GradesLandscapeTablet.png in Resources */ = {isa = PBXBuildFile; fileRef = 061B74A31398167200D7EF79 /* GradesLandscapeTablet.png */; };
+		061B74AC1398167200D7EF79 /* GradesLandscapeTablet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 061B74A41398167200D7EF79 /* GradesLandscapeTablet@2x.png */; };
+		061B74AD1398167200D7EF79 /* GradesPortraitHandheld.png in Resources */ = {isa = PBXBuildFile; fileRef = 061B74A51398167200D7EF79 /* GradesPortraitHandheld.png */; };
+		061B74AE1398167200D7EF79 /* GradesPortraitHandheld@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 061B74A61398167200D7EF79 /* GradesPortraitHandheld@2x.png */; };
+		061B74AF1398167200D7EF79 /* GradesPortraitTablet.png in Resources */ = {isa = PBXBuildFile; fileRef = 061B74A71398167200D7EF79 /* GradesPortraitTablet.png */; };
+		061B74B01398167200D7EF79 /* GradesPortraitTablet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 061B74A81398167200D7EF79 /* GradesPortraitTablet@2x.png */; };
 		068ECB6F1386D7750012C46C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 068ECB6E1386D7750012C46C /* UIKit.framework */; };
 		068ECB711386D7750012C46C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 068ECB701386D7750012C46C /* Foundation.framework */; };
 		068ECB731386D7750012C46C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 068ECB721386D7750012C46C /* CoreGraphics.framework */; };
@@ -28,14 +36,6 @@
 		068ECB9E1386DC5C0012C46C /* JPStandInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 068ECB9C1386DC5C0012C46C /* JPStandInViewController.m */; };
 		068ECB9F1386DC5C0012C46C /* JPAdvertisementPlaygroundViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 068ECB9D1386DC5C0012C46C /* JPAdvertisementPlaygroundViewController.xib */; };
 		068ECBB31386DEE80012C46C /* Grades.plist in Resources */ = {isa = PBXBuildFile; fileRef = 068ECBAE1386DEE80012C46C /* Grades.plist */; };
-		068ECBB41386DEE80012C46C /* GradesLandscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 068ECBAF1386DEE80012C46C /* GradesLandscape.png */; };
-		068ECBB51386DEE80012C46C /* GradesLandscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 068ECBB01386DEE80012C46C /* GradesLandscape@2x.png */; };
-		068ECBB61386DEE80012C46C /* GradesPortrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 068ECBB11386DEE80012C46C /* GradesPortrait.png */; };
-		068ECBB71386DEE80012C46C /* GradesPortrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 068ECBB21386DEE80012C46C /* GradesPortrait@2x.png */; };
-		068ECBBD1386DF480012C46C /* Shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 068ECBB91386DF480012C46C /* Shadow.png */; };
-		068ECBBE1386DF480012C46C /* Shadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 068ECBBA1386DF480012C46C /* Shadow@2x.png */; };
-		068ECBBF1386DF480012C46C /* ShadowLandscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 068ECBBB1386DF480012C46C /* ShadowLandscape.png */; };
-		068ECBC01386DF480012C46C /* ShadowLandscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 068ECBBC1386DF480012C46C /* ShadowLandscape@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,9 +49,17 @@
 		0611746D1386EB91008195C2 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = SOURCE_ROOT; };
 		0619F8FE1386ECDF00C27453 /* JPAdvertisementBannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPAdvertisementBannerViewController.h; sourceTree = "<group>"; };
 		0619F8FF1386ECDF00C27453 /* JPAdvertisementBannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPAdvertisementBannerViewController.m; sourceTree = "<group>"; };
-		0619F9001386ECDF00C27453 /* JPAdvertisementBannerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JPAdvertisementBannerViewController.xib; sourceTree = "<group>"; };
 		0619F9011386ECDF00C27453 /* JPAdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPAdViewController.h; sourceTree = "<group>"; };
 		0619F9021386ECDF00C27453 /* JPAdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPAdViewController.m; sourceTree = "<group>"; };
+		061B74821398096E00D7EF79 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "iPad/en.lproj/MainWindow-iPad.xib"; sourceTree = "<group>"; };
+		061B74A11398167200D7EF79 /* GradesLandscapeHandheld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GradesLandscapeHandheld.png; sourceTree = "<group>"; };
+		061B74A21398167200D7EF79 /* GradesLandscapeHandheld@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GradesLandscapeHandheld@2x.png"; sourceTree = "<group>"; };
+		061B74A31398167200D7EF79 /* GradesLandscapeTablet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GradesLandscapeTablet.png; sourceTree = "<group>"; };
+		061B74A41398167200D7EF79 /* GradesLandscapeTablet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GradesLandscapeTablet@2x.png"; sourceTree = "<group>"; };
+		061B74A51398167200D7EF79 /* GradesPortraitHandheld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GradesPortraitHandheld.png; sourceTree = "<group>"; };
+		061B74A61398167200D7EF79 /* GradesPortraitHandheld@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GradesPortraitHandheld@2x.png"; sourceTree = "<group>"; };
+		061B74A71398167200D7EF79 /* GradesPortraitTablet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GradesPortraitTablet.png; sourceTree = "<group>"; };
+		061B74A81398167200D7EF79 /* GradesPortraitTablet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GradesPortraitTablet@2x.png"; sourceTree = "<group>"; };
 		068ECB6A1386D7750012C46C /* JPAdvertisement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JPAdvertisement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		068ECB6E1386D7750012C46C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		068ECB701386D7750012C46C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -67,14 +75,6 @@
 		068ECB9C1386DC5C0012C46C /* JPStandInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPStandInViewController.m; sourceTree = "<group>"; };
 		068ECB9D1386DC5C0012C46C /* JPAdvertisementPlaygroundViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JPAdvertisementPlaygroundViewController.xib; sourceTree = "<group>"; };
 		068ECBAE1386DEE80012C46C /* Grades.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Grades.plist; sourceTree = "<group>"; };
-		068ECBAF1386DEE80012C46C /* GradesLandscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GradesLandscape.png; sourceTree = "<group>"; };
-		068ECBB01386DEE80012C46C /* GradesLandscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GradesLandscape@2x.png"; sourceTree = "<group>"; };
-		068ECBB11386DEE80012C46C /* GradesPortrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GradesPortrait.png; sourceTree = "<group>"; };
-		068ECBB21386DEE80012C46C /* GradesPortrait@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GradesPortrait@2x.png"; sourceTree = "<group>"; };
-		068ECBB91386DF480012C46C /* Shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Shadow.png; sourceTree = "<group>"; };
-		068ECBBA1386DF480012C46C /* Shadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Shadow@2x.png"; sourceTree = "<group>"; };
-		068ECBBB1386DF480012C46C /* ShadowLandscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ShadowLandscape.png; sourceTree = "<group>"; };
-		068ECBBC1386DF480012C46C /* ShadowLandscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ShadowLandscape@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,11 +111,18 @@
 			children = (
 				0619F8FE1386ECDF00C27453 /* JPAdvertisementBannerViewController.h */,
 				0619F8FF1386ECDF00C27453 /* JPAdvertisementBannerViewController.m */,
-				0619F9001386ECDF00C27453 /* JPAdvertisementBannerViewController.xib */,
 				0619F9011386ECDF00C27453 /* JPAdViewController.h */,
 				0619F9021386ECDF00C27453 /* JPAdViewController.m */,
 			);
 			path = JPAdvert;
+			sourceTree = "<group>";
+		};
+		061B74801398096D00D7EF79 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				061B74811398096E00D7EF79 /* MainWindow-iPad.xib */,
+			);
+			name = iPad;
 			sourceTree = "<group>";
 		};
 		068ECB5F1386D7750012C46C = {
@@ -148,9 +155,9 @@
 		068ECB741386D7750012C46C /* JPAdvertisement */ = {
 			isa = PBXGroup;
 			children = (
+				061B74801398096D00D7EF79 /* iPad */,
 				061174761386EB96008195C2 /* Icon */,
 				068ECBAD1386DEE80012C46C /* Grades */,
-				068ECBB81386DF480012C46C /* Shadow */,
 				0619F8FD1386ECDF00C27453 /* JPAdvert */,
 				068ECBA11386DE510012C46C /* Delegate */,
 				068ECBA01386DC610012C46C /* Holder view */,
@@ -194,23 +201,16 @@
 			isa = PBXGroup;
 			children = (
 				068ECBAE1386DEE80012C46C /* Grades.plist */,
-				068ECBAF1386DEE80012C46C /* GradesLandscape.png */,
-				068ECBB01386DEE80012C46C /* GradesLandscape@2x.png */,
-				068ECBB11386DEE80012C46C /* GradesPortrait.png */,
-				068ECBB21386DEE80012C46C /* GradesPortrait@2x.png */,
+				061B74A11398167200D7EF79 /* GradesLandscapeHandheld.png */,
+				061B74A21398167200D7EF79 /* GradesLandscapeHandheld@2x.png */,
+				061B74A31398167200D7EF79 /* GradesLandscapeTablet.png */,
+				061B74A41398167200D7EF79 /* GradesLandscapeTablet@2x.png */,
+				061B74A51398167200D7EF79 /* GradesPortraitHandheld.png */,
+				061B74A61398167200D7EF79 /* GradesPortraitHandheld@2x.png */,
+				061B74A71398167200D7EF79 /* GradesPortraitTablet.png */,
+				061B74A81398167200D7EF79 /* GradesPortraitTablet@2x.png */,
 			);
 			path = Grades;
-			sourceTree = "<group>";
-		};
-		068ECBB81386DF480012C46C /* Shadow */ = {
-			isa = PBXGroup;
-			children = (
-				068ECBB91386DF480012C46C /* Shadow.png */,
-				068ECBBA1386DF480012C46C /* Shadow@2x.png */,
-				068ECBBB1386DF480012C46C /* ShadowLandscape.png */,
-				068ECBBC1386DF480012C46C /* ShadowLandscape@2x.png */,
-			);
-			path = Shadow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,14 +267,6 @@
 				068ECB821386D7750012C46C /* MainWindow.xib in Resources */,
 				068ECB9F1386DC5C0012C46C /* JPAdvertisementPlaygroundViewController.xib in Resources */,
 				068ECBB31386DEE80012C46C /* Grades.plist in Resources */,
-				068ECBB41386DEE80012C46C /* GradesLandscape.png in Resources */,
-				068ECBB51386DEE80012C46C /* GradesLandscape@2x.png in Resources */,
-				068ECBB61386DEE80012C46C /* GradesPortrait.png in Resources */,
-				068ECBB71386DEE80012C46C /* GradesPortrait@2x.png in Resources */,
-				068ECBBD1386DF480012C46C /* Shadow.png in Resources */,
-				068ECBBE1386DF480012C46C /* Shadow@2x.png in Resources */,
-				068ECBBF1386DF480012C46C /* ShadowLandscape.png in Resources */,
-				068ECBC01386DF480012C46C /* ShadowLandscape@2x.png in Resources */,
 				0611746E1386EB92008195C2 /* Icon-72.png in Resources */,
 				0611746F1386EB92008195C2 /* Icon-AppStore.jpg in Resources */,
 				061174701386EB92008195C2 /* Icon-Small-50.png in Resources */,
@@ -283,7 +275,15 @@
 				061174731386EB92008195C2 /* Icon.png in Resources */,
 				061174741386EB92008195C2 /* Icon@2x.png in Resources */,
 				061174751386EB92008195C2 /* iTunesArtwork in Resources */,
-				0619F9041386ECDF00C27453 /* JPAdvertisementBannerViewController.xib in Resources */,
+				061B74831398096E00D7EF79 /* MainWindow-iPad.xib in Resources */,
+				061B74A91398167200D7EF79 /* GradesLandscapeHandheld.png in Resources */,
+				061B74AA1398167200D7EF79 /* GradesLandscapeHandheld@2x.png in Resources */,
+				061B74AB1398167200D7EF79 /* GradesLandscapeTablet.png in Resources */,
+				061B74AC1398167200D7EF79 /* GradesLandscapeTablet@2x.png in Resources */,
+				061B74AD1398167200D7EF79 /* GradesPortraitHandheld.png in Resources */,
+				061B74AE1398167200D7EF79 /* GradesPortraitHandheld@2x.png in Resources */,
+				061B74AF1398167200D7EF79 /* GradesPortraitTablet.png in Resources */,
+				061B74B01398167200D7EF79 /* GradesPortraitTablet@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +305,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		061B74811398096E00D7EF79 /* MainWindow-iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				061B74821398096E00D7EF79 /* en */,
+			);
+			name = "MainWindow-iPad.xib";
+			sourceTree = "<group>";
+		};
 		068ECB771386D7750012C46C /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -365,7 +373,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JPAdvertisement/JPAdvertisement-Prefix.pch";
 				INFOPLIST_FILE = "JPAdvertisement/JPAdvertisement-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -378,7 +388,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JPAdvertisement/JPAdvertisement-Prefix.pch";
 				INFOPLIST_FILE = "JPAdvertisement/JPAdvertisement-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};

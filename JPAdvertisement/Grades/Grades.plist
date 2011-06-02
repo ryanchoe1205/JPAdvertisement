@@ -7,8 +7,12 @@
 	<key>affiliatedLink</key>
 	<true/>
 	<key>handheldLandscapeImage</key>
-	<string>GradesLandscape.png</string>
+	<string>GradesLandscapeHandheld.png</string>
 	<key>handheldPortraitImage</key>
-	<string>GradesPortrait.png</string>
+	<string>GradesPortraitHandheld.png</string>
+	<key>tabletPortraitImage</key>
+	<string>GradesPortraitTablet.png</string>
+	<key>tabletLandscapeImage</key>
+	<string>GradesLandscapeTablet.png</string>
 </dict>
 </plist>

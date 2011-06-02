@@ -36,6 +36,9 @@
 static NSString *const JPAdvertisementHandheldLandscape = @"JPAdvertisementHandheldLandscape";
 static NSString *const JPAdvertisementHandheldPortrait = @"JPAdvertisementHandheldPortrait";
 
+static NSString *const JPAdvertisementTabletLandscape = @"JPAdvertisementTabletLandscape";
+static NSString *const JPAdvertisementTabletPortrait = @"JPAdvertisementTabletPortrait";
+
 @interface JPAdvertisementBannerViewController : UIViewController {
 	@private
 	IBOutlet UIButton *adButton;
@@ -68,5 +71,8 @@ static NSString *const JPAdvertisementHandheldPortrait = @"JPAdvertisementHandhe
 
 //Ad tapped action
 - (IBAction) adTapped:(UIButton *) sender;
+
+- (id) initWithFrame:(CGRect) frame;
+- (id) initWithOrigin:(CGPoint) point;
 
 @end

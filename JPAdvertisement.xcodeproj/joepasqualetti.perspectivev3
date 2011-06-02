@@ -296,7 +296,7 @@
 							<key>PBXSmartGroupTreeModuleColumnWidthsKey</key>
 							<array>
 								<real>22</real>
-								<real>16</real>
+								<real>219</real>
 							</array>
 							<key>PBXSmartGroupTreeModuleColumnsKey_v4</key>
 							<array>
@@ -321,7 +321,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {0, 0}}</string>
+							<string>{{0, 0}, {241, 700}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -331,13 +331,13 @@
 					<key>GeometryConfiguration</key>
 					<dict>
 						<key>Frame</key>
-						<string>{{0, 0}, {0, 718}}</string>
+						<string>{{0, 0}, {258, 718}}</string>
 						<key>GroupTreeTableConfiguration</key>
 						<array>
 							<string>SCMStatusColumn</string>
 							<real>22</real>
 							<string>MainColumn</string>
-							<real>16</real>
+							<real>219</real>
 						</array>
 						<key>RubberWindowFrame</key>
 						<string>646 451 1268 759 0 0 2560 1418 </string>
@@ -345,7 +345,7 @@
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
 					<key>Proportion</key>
-					<string>0pt</string>
+					<string>258pt</string>
 				</dict>
 				<dict>
 					<key>Dock</key>
@@ -377,7 +377,7 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1263, 713}}</string>
+								<string>{{0, 0}, {1005, 713}}</string>
 								<key>RubberWindowFrame</key>
 								<string>646 451 1268 759 0 0 2560 1418 </string>
 							</dict>
@@ -402,7 +402,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1263, -27}}</string>
+										<string>{{10, 27}, {1005, -27}}</string>
 										<key>RubberWindowFrame</key>
 										<string>646 451 1268 759 0 0 2560 1418 </string>
 									</dict>
@@ -467,7 +467,7 @@
 						</dict>
 					</array>
 					<key>Proportion</key>
-					<string>1263pt</string>
+					<string>1005pt</string>
 				</dict>
 			</array>
 			<key>Name</key>
@@ -486,11 +486,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>06E80C141386EC1000276A86</string>
+				<string>0684421113881FFB00BB4968</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>06E80C151386EC1000276A86</string>
+				<string>0684421213881FFB00BB4968</string>
 				<string>06649C0B10155C460006EC6C</string>
-				<string>06E80C161386EC1000276A86</string>
+				<string>0684421313881FFB00BB4968</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -662,7 +662,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>327609360.22868103</real>
+	<real>327688187.18447798</real>
 	<key>ToolbarDisplayMode</key>
 	<integer>1</integer>
 	<key>ToolbarIsVisible</key>

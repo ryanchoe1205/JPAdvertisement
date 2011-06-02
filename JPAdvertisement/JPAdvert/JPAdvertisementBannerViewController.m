@@ -36,6 +36,26 @@
 CGSize handheldPortraitSize = {320, 50};
 CGSize handheldLandscape = {480, 32};
 
+CGSize tabletPortraitSize = {768, 66};
+CGSize tabletLandscapeSize = {1024, 66};
+
+static NSString *contentSizeIdentifierForCurrentInterface() {
+	UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+	UIUserInterfaceIdiom idiom = [[UIDevice currentDevice] userInterfaceIdiom];
+	
+	if (UIInterfaceOrientationIsPortrait(orientation)) {
+		if (idiom == UIUserInterfaceIdiomPhone)
+			return JPAdvertisementHandheldPortrait;
+		else if (idiom == UIUserInterfaceIdiomPad)
+			return JPAdvertisementTabletPortrait;
+	} else if (UIInterfaceOrientationIsLandscape(orientation)) {
+		if (idiom == UIUserInterfaceIdiomPhone)
+			return JPAdvertisementHandheldLandscape;
+		else if (idiom == UIUserInterfaceIdiomPad)
+			return JPAdvertisementTabletLandscape;
+	}
+	return nil;
+}
 
 @interface JPAdvertisementBannerViewController ()
 
@@ -81,8 +101,15 @@ CGSize handheldLandscape = {480, 32};
 	if (completeData) {
 		self.adURL = [NSURL URLWithString:[data valueForKey:@"adURL"]];
 		self.affiliatedLink = [data valueForKey:@"affiliatedLink"] ? YES : NO;
-		self.adImageLandscape = [data valueForKey:@"handheldLandscapeImage"];
-		self.adImagePortrait = [data valueForKey:@"handheldPortraitImage"];
+		
+		if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+			self.adImageLandscape = [data valueForKey:@"handheldLandscapeImage"];
+			self.adImagePortrait = [data valueForKey:@"handheldPortraitImage"];
+		} else if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+			self.adImageLandscape = [data valueForKey:@"tabletLandscapeImage"];
+			self.adImagePortrait = [data valueForKey:@"tabletPortraitImage"];
+		}
+		
 		[self layoutAdForCurrentOrientation];
 		return YES;
 	} else
@@ -108,6 +135,10 @@ CGSize handheldLandscape = {480, 32};
 		return handheldLandscape;
 	} else if (contentSizeIdentifier == JPAdvertisementHandheldPortrait) {
 		return handheldPortraitSize;
+	} else if (contentSizeIdentifier == JPAdvertisementTabletLandscape) {
+		return tabletLandscapeSize;
+	} else if (contentSizeIdentifier == JPAdvertisementTabletPortrait) {
+		return tabletPortraitSize;
 	} else
 		return CGSizeZero;
 }
@@ -138,8 +169,24 @@ CGSize handheldLandscape = {480, 32};
 #pragma mark - Memory Management
 
 - (id) init {
-	self = [super initWithNibName:NSStringFromClass([self class]) bundle:nil];
+	return [self initWithOrigin:CGPointZero];
+}
+
+- (id) initWithFrame:(CGRect)laFrame {
+	return [self initWithOrigin:laFrame.origin];
+}
+
+- (id) initWithOrigin:(CGPoint)laPoint {
+	self = [super init];
 	if (self) {
+		currentContentSizeIdentifier = contentSizeIdentifierForCurrentInterface();
+		CGSize viewSize = [self sizeFromBannerContentSizeIdentifier:currentContentSizeIdentifier];
+		self.view.frame = (CGRect) {laPoint, viewSize};
+		
+		UIButton *button = [[UIButton alloc] initWithFrame:(CGRect) {CGPointZero, viewSize}];
+		self.adButton = button;
+		[button release];
+		[self.view addSubview:adButton];
 	}
 	return self;
 }
@@ -168,7 +215,6 @@ CGSize handheldLandscape = {480, 32};
 
 #pragma mark - View lifecycle
 
-
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -196,22 +242,22 @@ CGSize handheldLandscape = {480, 32};
     return YES;
 }
 
+
 - (void) layoutAdForCurrentOrientation {
 	UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+	UIImage *adImage;
 	
-	if (UIInterfaceOrientationIsPortrait(orientation)) { //Portrait
-		currentContentSizeIdentifier = JPAdvertisementHandheldPortrait;
-		[self.adButton setImage:[UIImage imageNamed:adImagePortrait] forState:UIControlStateNormal];
-	} 
-	else if (UIInterfaceOrientationIsLandscape(orientation)) { //Landscape
-		currentContentSizeIdentifier = JPAdvertisementHandheldLandscape;
-		[self.adButton setImage:[UIImage imageNamed:adImageLandscape] forState:UIControlStateNormal];
-	} else {
-		NSLog(@"Error in resizing adView.");
-	}
+	if (UIInterfaceOrientationIsPortrait(orientation))
+		adImage = [UIImage imageNamed:adImagePortrait];
+	else if (UIInterfaceOrientationIsLandscape(orientation))
+		adImage = [UIImage imageNamed:adImageLandscape];
+	
+	currentContentSizeIdentifier = contentSizeIdentifierForCurrentInterface();
+	[self.adButton setImage:adImage forState:UIControlStateNormal];
 	
 	[self.adButton setNeedsDisplay];
 }
+
 
 - (void) deviceRotated:(id) sender {
 
@@ -220,13 +266,10 @@ CGSize handheldLandscape = {480, 32};
 	CGSize size = [self sizeFromBannerContentSizeIdentifier:currentContentSizeIdentifier];
 	CGRect frame = {0,0, size};
 	
-	[UIView animateWithDuration:.2 animations:^(void) {
+	[UIView animateWithDuration:0.2 animations:^(void) {
 		self.view.frame = (CGRect) {self.view.frame.origin, size};
 		self.adButton.frame = frame;
 	}];
-	
 }
-
-
 
 @end
