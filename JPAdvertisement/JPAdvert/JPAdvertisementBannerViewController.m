@@ -60,7 +60,6 @@ static NSString *contentSizeIdentifierForCurrentInterface() {
 @interface JPAdvertisementBannerViewController ()
 
 - (void) deviceRotated:(id) sender;
-- (BOOL) loadAdTextFromPlist:(NSString *) plist;
 
 - (void)openReferralURL:(NSURL *)referralURL;
 - (NSURLRequest *)connection:(NSURLConnection *)connection willSendRequest:(NSURLRequest *)request redirectResponse:(NSURLResponse *)response;
@@ -81,11 +80,13 @@ static NSString *contentSizeIdentifierForCurrentInterface() {
 	@synthesize adImagePortrait, adImageLandscape;
 
 	@synthesize requiredContentSizeIdentifiers, currentContentSizeIdentifier;
+	
+	@synthesize hidden, frame;
 
 
 #pragma mark - Ad Loading
 
-- (BOOL) loadAdTextFromPlist:(NSString *) plist {
+- (BOOL) loadAdFromPlistNamed:(NSString *) plist {
 	
 	NSDictionary *data = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:plist ofType:@"plist"]];
 	
@@ -117,7 +118,7 @@ static NSString *contentSizeIdentifierForCurrentInterface() {
 }
 
 - (BOOL) loadAd {
-	return [self loadAdTextFromPlist:@"Grades"];
+	return [self loadAdFromPlistNamed:@"Grades"];
 }
 
 
@@ -166,6 +167,24 @@ static NSString *contentSizeIdentifierForCurrentInterface() {
     [[UIApplication sharedApplication] openURL:self.linkShareURL];
 }
 
+#pragma mark - UIView methods
+
+- (void) setHidden:(BOOL)paramHidden {
+	self.view.hidden = paramHidden;
+}
+
+- (BOOL) isHidden {
+	return [self.view isHidden];
+}
+
+- (void) setFrame:(CGRect)paramFrame {
+	self.view.frame = paramFrame;
+}
+
+- (CGRect) frame {
+	return self.view.frame;
+}
+
 #pragma mark - Memory Management
 
 - (id) init {
@@ -201,6 +220,7 @@ static NSString *contentSizeIdentifierForCurrentInterface() {
 	
 	[requiredContentSizeIdentifiers release];
 	[currentContentSizeIdentifier release];
+		
     [super dealloc];
 }
 
@@ -245,7 +265,7 @@ static NSString *contentSizeIdentifierForCurrentInterface() {
 
 - (void) layoutAdForCurrentOrientation {
 	UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
-	UIImage *adImage;
+	UIImage *adImage = nil;
 	
 	if (UIInterfaceOrientationIsPortrait(orientation))
 		adImage = [UIImage imageNamed:adImagePortrait];
@@ -264,11 +284,11 @@ static NSString *contentSizeIdentifierForCurrentInterface() {
 	[self layoutAdForCurrentOrientation];
 	
 	CGSize size = [self sizeFromBannerContentSizeIdentifier:currentContentSizeIdentifier];
-	CGRect frame = {0,0, size};
+	CGRect newFrame = {0,0, size};
 	
 	[UIView animateWithDuration:0.2 animations:^(void) {
 		self.view.frame = (CGRect) {self.view.frame.origin, size};
-		self.adButton.frame = frame;
+		self.adButton.frame = newFrame;
 	}];
 }
 

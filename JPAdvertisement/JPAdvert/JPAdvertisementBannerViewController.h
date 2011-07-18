@@ -51,6 +51,9 @@ static NSString *const JPAdvertisementTabletPortrait = @"JPAdvertisementTabletPo
 	@public
 	NSSet *requiredContentSizeIdentifiers;
 	NSString *currentContentSizeIdentifier;
+	
+	BOOL hidden;
+	CGRect frame;
 }
 
 @property (nonatomic, retain) UIButton *adButton;
@@ -63,11 +66,15 @@ static NSString *const JPAdvertisementTabletPortrait = @"JPAdvertisementTabletPo
 @property (nonatomic, copy) NSSet *requiredContentSizeIdentifiers;
 @property (nonatomic, copy) NSString *currentContentSizeIdentifier;
 
+@property (nonatomic, getter = isHidden) BOOL hidden;
+@property (nonatomic) CGRect frame;
+
 //Sizes, in class and instance methods
 + (CGSize) sizeFromBannerContentSizeIdentifier:(NSString *)contentSizeIdentifier;
 - (CGSize) sizeFromBannerContentSizeIdentifier:(NSString *)contentSizeIdentifier;
 
 - (BOOL) loadAd;
+- (BOOL) loadAdFromPlistNamed:(NSString *) plist;
 
 //Ad tapped action
 - (IBAction) adTapped:(UIButton *) sender;
