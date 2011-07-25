@@ -7,25 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0611746E1386EB92008195C2 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 061174661386EB90008195C2 /* Icon-72.png */; };
-		0611746F1386EB92008195C2 /* Icon-AppStore.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 061174671386EB90008195C2 /* Icon-AppStore.jpg */; };
-		061174701386EB92008195C2 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 061174681386EB90008195C2 /* Icon-Small-50.png */; };
-		061174711386EB92008195C2 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 061174691386EB91008195C2 /* Icon-Small.png */; };
-		061174721386EB92008195C2 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0611746A1386EB91008195C2 /* Icon-Small@2x.png */; };
-		061174731386EB92008195C2 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0611746B1386EB91008195C2 /* Icon.png */; };
-		061174741386EB92008195C2 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0611746C1386EB91008195C2 /* Icon@2x.png */; };
-		061174751386EB92008195C2 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 0611746D1386EB91008195C2 /* iTunesArtwork */; };
 		0619F9031386ECDF00C27453 /* JPAdvertisementBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0619F8FF1386ECDF00C27453 /* JPAdvertisementBannerViewController.m */; };
 		0619F9051386ECDF00C27453 /* JPAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0619F9021386ECDF00C27453 /* JPAdViewController.m */; };
 		061B74831398096E00D7EF79 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 061B74811398096E00D7EF79 /* MainWindow-iPad.xib */; };
-		061B74A91398167200D7EF79 /* GradesLandscapeHandheld.png in Resources */ = {isa = PBXBuildFile; fileRef = 061B74A11398167200D7EF79 /* GradesLandscapeHandheld.png */; };
-		061B74AA1398167200D7EF79 /* GradesLandscapeHandheld@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 061B74A21398167200D7EF79 /* GradesLandscapeHandheld@2x.png */; };
-		061B74AB1398167200D7EF79 /* GradesLandscapeTablet.png in Resources */ = {isa = PBXBuildFile; fileRef = 061B74A31398167200D7EF79 /* GradesLandscapeTablet.png */; };
-		061B74AC1398167200D7EF79 /* GradesLandscapeTablet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 061B74A41398167200D7EF79 /* GradesLandscapeTablet@2x.png */; };
-		061B74AD1398167200D7EF79 /* GradesPortraitHandheld.png in Resources */ = {isa = PBXBuildFile; fileRef = 061B74A51398167200D7EF79 /* GradesPortraitHandheld.png */; };
-		061B74AE1398167200D7EF79 /* GradesPortraitHandheld@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 061B74A61398167200D7EF79 /* GradesPortraitHandheld@2x.png */; };
-		061B74AF1398167200D7EF79 /* GradesPortraitTablet.png in Resources */ = {isa = PBXBuildFile; fileRef = 061B74A71398167200D7EF79 /* GradesPortraitTablet.png */; };
-		061B74B01398167200D7EF79 /* GradesPortraitTablet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 061B74A81398167200D7EF79 /* GradesPortraitTablet@2x.png */; };
 		068ECB6F1386D7750012C46C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 068ECB6E1386D7750012C46C /* UIKit.framework */; };
 		068ECB711386D7750012C46C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 068ECB701386D7750012C46C /* Foundation.framework */; };
 		068ECB731386D7750012C46C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 068ECB721386D7750012C46C /* CoreGraphics.framework */; };
@@ -35,31 +19,31 @@
 		068ECB821386D7750012C46C /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 068ECB801386D7750012C46C /* MainWindow.xib */; };
 		068ECB9E1386DC5C0012C46C /* JPStandInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 068ECB9C1386DC5C0012C46C /* JPStandInViewController.m */; };
 		068ECB9F1386DC5C0012C46C /* JPAdvertisementPlaygroundViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 068ECB9D1386DC5C0012C46C /* JPAdvertisementPlaygroundViewController.xib */; };
-		068ECBB31386DEE80012C46C /* Grades.plist in Resources */ = {isa = PBXBuildFile; fileRef = 068ECBAE1386DEE80012C46C /* Grades.plist */; };
+		D8E1579A13DDE3F900EA4C72 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E1579213DDE3F900EA4C72 /* Icon-72.png */; };
+		D8E1579B13DDE3F900EA4C72 /* Icon-AppStore.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D8E1579313DDE3F900EA4C72 /* Icon-AppStore.jpg */; };
+		D8E1579C13DDE3F900EA4C72 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E1579413DDE3F900EA4C72 /* Icon-Small-50.png */; };
+		D8E1579D13DDE3F900EA4C72 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E1579513DDE3F900EA4C72 /* Icon-Small.png */; };
+		D8E1579E13DDE3F900EA4C72 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E1579613DDE3F900EA4C72 /* Icon-Small@2x.png */; };
+		D8E1579F13DDE3F900EA4C72 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E1579713DDE3F900EA4C72 /* Icon.png */; };
+		D8E157A013DDE3F900EA4C72 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E1579813DDE3F900EA4C72 /* Icon@2x.png */; };
+		D8E157A113DDE3F900EA4C72 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = D8E1579913DDE3F900EA4C72 /* iTunesArtwork */; };
+		D8E157AB13DDE42300EA4C72 /* Grades.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8E157A213DDE42300EA4C72 /* Grades.plist */; };
+		D8E157AC13DDE42300EA4C72 /* GradesLandscapeHandheld.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E157A313DDE42300EA4C72 /* GradesLandscapeHandheld.png */; };
+		D8E157AD13DDE42300EA4C72 /* GradesLandscapeHandheld@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E157A413DDE42300EA4C72 /* GradesLandscapeHandheld@2x.png */; };
+		D8E157AE13DDE42300EA4C72 /* GradesLandscapeTablet.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E157A513DDE42300EA4C72 /* GradesLandscapeTablet.png */; };
+		D8E157AF13DDE42300EA4C72 /* GradesLandscapeTablet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E157A613DDE42300EA4C72 /* GradesLandscapeTablet@2x.png */; };
+		D8E157B013DDE42300EA4C72 /* GradesPortraitHandheld.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E157A713DDE42300EA4C72 /* GradesPortraitHandheld.png */; };
+		D8E157B113DDE42300EA4C72 /* GradesPortraitHandheld@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E157A813DDE42300EA4C72 /* GradesPortraitHandheld@2x.png */; };
+		D8E157B213DDE42300EA4C72 /* GradesPortraitTablet.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E157A913DDE42300EA4C72 /* GradesPortraitTablet.png */; };
+		D8E157B313DDE42300EA4C72 /* GradesPortraitTablet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E157AA13DDE42300EA4C72 /* GradesPortraitTablet@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		061174661386EB90008195C2 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = SOURCE_ROOT; };
-		061174671386EB90008195C2 /* Icon-AppStore.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Icon-AppStore.jpg"; sourceTree = SOURCE_ROOT; };
-		061174681386EB90008195C2 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = SOURCE_ROOT; };
-		061174691386EB91008195C2 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = SOURCE_ROOT; };
-		0611746A1386EB91008195C2 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = SOURCE_ROOT; };
-		0611746B1386EB91008195C2 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = SOURCE_ROOT; };
-		0611746C1386EB91008195C2 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = SOURCE_ROOT; };
-		0611746D1386EB91008195C2 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = SOURCE_ROOT; };
 		0619F8FE1386ECDF00C27453 /* JPAdvertisementBannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPAdvertisementBannerViewController.h; sourceTree = "<group>"; };
 		0619F8FF1386ECDF00C27453 /* JPAdvertisementBannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPAdvertisementBannerViewController.m; sourceTree = "<group>"; };
 		0619F9011386ECDF00C27453 /* JPAdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPAdViewController.h; sourceTree = "<group>"; };
 		0619F9021386ECDF00C27453 /* JPAdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPAdViewController.m; sourceTree = "<group>"; };
 		061B74821398096E00D7EF79 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "iPad/en.lproj/MainWindow-iPad.xib"; sourceTree = "<group>"; };
-		061B74A11398167200D7EF79 /* GradesLandscapeHandheld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GradesLandscapeHandheld.png; sourceTree = "<group>"; };
-		061B74A21398167200D7EF79 /* GradesLandscapeHandheld@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GradesLandscapeHandheld@2x.png"; sourceTree = "<group>"; };
-		061B74A31398167200D7EF79 /* GradesLandscapeTablet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GradesLandscapeTablet.png; sourceTree = "<group>"; };
-		061B74A41398167200D7EF79 /* GradesLandscapeTablet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GradesLandscapeTablet@2x.png"; sourceTree = "<group>"; };
-		061B74A51398167200D7EF79 /* GradesPortraitHandheld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GradesPortraitHandheld.png; sourceTree = "<group>"; };
-		061B74A61398167200D7EF79 /* GradesPortraitHandheld@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GradesPortraitHandheld@2x.png"; sourceTree = "<group>"; };
-		061B74A71398167200D7EF79 /* GradesPortraitTablet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GradesPortraitTablet.png; sourceTree = "<group>"; };
-		061B74A81398167200D7EF79 /* GradesPortraitTablet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GradesPortraitTablet@2x.png"; sourceTree = "<group>"; };
 		068ECB6A1386D7750012C46C /* JPAdvertisement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JPAdvertisement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		068ECB6E1386D7750012C46C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		068ECB701386D7750012C46C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -74,7 +58,23 @@
 		068ECB9B1386DC5C0012C46C /* JPStandInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPStandInViewController.h; sourceTree = "<group>"; };
 		068ECB9C1386DC5C0012C46C /* JPStandInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPStandInViewController.m; sourceTree = "<group>"; };
 		068ECB9D1386DC5C0012C46C /* JPAdvertisementPlaygroundViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JPAdvertisementPlaygroundViewController.xib; sourceTree = "<group>"; };
-		068ECBAE1386DEE80012C46C /* Grades.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Grades.plist; sourceTree = "<group>"; };
+		D8E1579213DDE3F900EA4C72 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		D8E1579313DDE3F900EA4C72 /* Icon-AppStore.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Icon-AppStore.jpg"; sourceTree = "<group>"; };
+		D8E1579413DDE3F900EA4C72 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
+		D8E1579513DDE3F900EA4C72 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		D8E1579613DDE3F900EA4C72 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		D8E1579713DDE3F900EA4C72 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		D8E1579813DDE3F900EA4C72 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		D8E1579913DDE3F900EA4C72 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
+		D8E157A213DDE42300EA4C72 /* Grades.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Grades.plist; path = "JPAdvertisement/Grades Sample Ad/Grades.plist"; sourceTree = SOURCE_ROOT; };
+		D8E157A313DDE42300EA4C72 /* GradesLandscapeHandheld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GradesLandscapeHandheld.png; path = "JPAdvertisement/Grades Sample Ad/GradesLandscapeHandheld.png"; sourceTree = SOURCE_ROOT; };
+		D8E157A413DDE42300EA4C72 /* GradesLandscapeHandheld@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GradesLandscapeHandheld@2x.png"; path = "JPAdvertisement/Grades Sample Ad/GradesLandscapeHandheld@2x.png"; sourceTree = SOURCE_ROOT; };
+		D8E157A513DDE42300EA4C72 /* GradesLandscapeTablet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GradesLandscapeTablet.png; path = "JPAdvertisement/Grades Sample Ad/GradesLandscapeTablet.png"; sourceTree = SOURCE_ROOT; };
+		D8E157A613DDE42300EA4C72 /* GradesLandscapeTablet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GradesLandscapeTablet@2x.png"; path = "JPAdvertisement/Grades Sample Ad/GradesLandscapeTablet@2x.png"; sourceTree = SOURCE_ROOT; };
+		D8E157A713DDE42300EA4C72 /* GradesPortraitHandheld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GradesPortraitHandheld.png; path = "JPAdvertisement/Grades Sample Ad/GradesPortraitHandheld.png"; sourceTree = SOURCE_ROOT; };
+		D8E157A813DDE42300EA4C72 /* GradesPortraitHandheld@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GradesPortraitHandheld@2x.png"; path = "JPAdvertisement/Grades Sample Ad/GradesPortraitHandheld@2x.png"; sourceTree = SOURCE_ROOT; };
+		D8E157A913DDE42300EA4C72 /* GradesPortraitTablet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GradesPortraitTablet.png; path = "JPAdvertisement/Grades Sample Ad/GradesPortraitTablet.png"; sourceTree = SOURCE_ROOT; };
+		D8E157AA13DDE42300EA4C72 /* GradesPortraitTablet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GradesPortraitTablet@2x.png"; path = "JPAdvertisement/Grades Sample Ad/GradesPortraitTablet@2x.png"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,21 +91,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		061174761386EB96008195C2 /* Icon */ = {
-			isa = PBXGroup;
-			children = (
-				061174661386EB90008195C2 /* Icon-72.png */,
-				061174671386EB90008195C2 /* Icon-AppStore.jpg */,
-				061174681386EB90008195C2 /* Icon-Small-50.png */,
-				061174691386EB91008195C2 /* Icon-Small.png */,
-				0611746A1386EB91008195C2 /* Icon-Small@2x.png */,
-				0611746B1386EB91008195C2 /* Icon.png */,
-				0611746C1386EB91008195C2 /* Icon@2x.png */,
-				0611746D1386EB91008195C2 /* iTunesArtwork */,
-			);
-			name = Icon;
-			sourceTree = "<group>";
-		};
 		0619F8FD1386ECDF00C27453 /* JPAdvert */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,8 +141,8 @@
 			isa = PBXGroup;
 			children = (
 				061B74801398096D00D7EF79 /* iPad */,
-				061174761386EB96008195C2 /* Icon */,
-				068ECBAD1386DEE80012C46C /* Grades */,
+				D8E1579113DDE3F900EA4C72 /* Icons */,
+				068ECBAD1386DEE80012C46C /* Grades Sample Ad */,
 				0619F8FD1386ECDF00C27453 /* JPAdvert */,
 				068ECBA11386DE510012C46C /* Delegate */,
 				068ECBA01386DC610012C46C /* Holder view */,
@@ -197,21 +182,37 @@
 			name = Delegate;
 			sourceTree = "<group>";
 		};
-		068ECBAD1386DEE80012C46C /* Grades */ = {
+		068ECBAD1386DEE80012C46C /* Grades Sample Ad */ = {
 			isa = PBXGroup;
 			children = (
-				068ECBAE1386DEE80012C46C /* Grades.plist */,
-				061B74A11398167200D7EF79 /* GradesLandscapeHandheld.png */,
-				061B74A21398167200D7EF79 /* GradesLandscapeHandheld@2x.png */,
-				061B74A31398167200D7EF79 /* GradesLandscapeTablet.png */,
-				061B74A41398167200D7EF79 /* GradesLandscapeTablet@2x.png */,
-				061B74A51398167200D7EF79 /* GradesPortraitHandheld.png */,
-				061B74A61398167200D7EF79 /* GradesPortraitHandheld@2x.png */,
-				061B74A71398167200D7EF79 /* GradesPortraitTablet.png */,
-				061B74A81398167200D7EF79 /* GradesPortraitTablet@2x.png */,
+				D8E157A213DDE42300EA4C72 /* Grades.plist */,
+				D8E157A313DDE42300EA4C72 /* GradesLandscapeHandheld.png */,
+				D8E157A413DDE42300EA4C72 /* GradesLandscapeHandheld@2x.png */,
+				D8E157A513DDE42300EA4C72 /* GradesLandscapeTablet.png */,
+				D8E157A613DDE42300EA4C72 /* GradesLandscapeTablet@2x.png */,
+				D8E157A713DDE42300EA4C72 /* GradesPortraitHandheld.png */,
+				D8E157A813DDE42300EA4C72 /* GradesPortraitHandheld@2x.png */,
+				D8E157A913DDE42300EA4C72 /* GradesPortraitTablet.png */,
+				D8E157AA13DDE42300EA4C72 /* GradesPortraitTablet@2x.png */,
 			);
+			name = "Grades Sample Ad";
 			path = Grades;
 			sourceTree = "<group>";
+		};
+		D8E1579113DDE3F900EA4C72 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				D8E1579213DDE3F900EA4C72 /* Icon-72.png */,
+				D8E1579313DDE3F900EA4C72 /* Icon-AppStore.jpg */,
+				D8E1579413DDE3F900EA4C72 /* Icon-Small-50.png */,
+				D8E1579513DDE3F900EA4C72 /* Icon-Small.png */,
+				D8E1579613DDE3F900EA4C72 /* Icon-Small@2x.png */,
+				D8E1579713DDE3F900EA4C72 /* Icon.png */,
+				D8E1579813DDE3F900EA4C72 /* Icon@2x.png */,
+				D8E1579913DDE3F900EA4C72 /* iTunesArtwork */,
+			);
+			path = Icons;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -266,24 +267,24 @@
 				068ECB791386D7750012C46C /* InfoPlist.strings in Resources */,
 				068ECB821386D7750012C46C /* MainWindow.xib in Resources */,
 				068ECB9F1386DC5C0012C46C /* JPAdvertisementPlaygroundViewController.xib in Resources */,
-				068ECBB31386DEE80012C46C /* Grades.plist in Resources */,
-				0611746E1386EB92008195C2 /* Icon-72.png in Resources */,
-				0611746F1386EB92008195C2 /* Icon-AppStore.jpg in Resources */,
-				061174701386EB92008195C2 /* Icon-Small-50.png in Resources */,
-				061174711386EB92008195C2 /* Icon-Small.png in Resources */,
-				061174721386EB92008195C2 /* Icon-Small@2x.png in Resources */,
-				061174731386EB92008195C2 /* Icon.png in Resources */,
-				061174741386EB92008195C2 /* Icon@2x.png in Resources */,
-				061174751386EB92008195C2 /* iTunesArtwork in Resources */,
 				061B74831398096E00D7EF79 /* MainWindow-iPad.xib in Resources */,
-				061B74A91398167200D7EF79 /* GradesLandscapeHandheld.png in Resources */,
-				061B74AA1398167200D7EF79 /* GradesLandscapeHandheld@2x.png in Resources */,
-				061B74AB1398167200D7EF79 /* GradesLandscapeTablet.png in Resources */,
-				061B74AC1398167200D7EF79 /* GradesLandscapeTablet@2x.png in Resources */,
-				061B74AD1398167200D7EF79 /* GradesPortraitHandheld.png in Resources */,
-				061B74AE1398167200D7EF79 /* GradesPortraitHandheld@2x.png in Resources */,
-				061B74AF1398167200D7EF79 /* GradesPortraitTablet.png in Resources */,
-				061B74B01398167200D7EF79 /* GradesPortraitTablet@2x.png in Resources */,
+				D8E1579A13DDE3F900EA4C72 /* Icon-72.png in Resources */,
+				D8E1579B13DDE3F900EA4C72 /* Icon-AppStore.jpg in Resources */,
+				D8E1579C13DDE3F900EA4C72 /* Icon-Small-50.png in Resources */,
+				D8E1579D13DDE3F900EA4C72 /* Icon-Small.png in Resources */,
+				D8E1579E13DDE3F900EA4C72 /* Icon-Small@2x.png in Resources */,
+				D8E1579F13DDE3F900EA4C72 /* Icon.png in Resources */,
+				D8E157A013DDE3F900EA4C72 /* Icon@2x.png in Resources */,
+				D8E157A113DDE3F900EA4C72 /* iTunesArtwork in Resources */,
+				D8E157AB13DDE42300EA4C72 /* Grades.plist in Resources */,
+				D8E157AC13DDE42300EA4C72 /* GradesLandscapeHandheld.png in Resources */,
+				D8E157AD13DDE42300EA4C72 /* GradesLandscapeHandheld@2x.png in Resources */,
+				D8E157AE13DDE42300EA4C72 /* GradesLandscapeTablet.png in Resources */,
+				D8E157AF13DDE42300EA4C72 /* GradesLandscapeTablet@2x.png in Resources */,
+				D8E157B013DDE42300EA4C72 /* GradesPortraitHandheld.png in Resources */,
+				D8E157B113DDE42300EA4C72 /* GradesPortraitHandheld@2x.png in Resources */,
+				D8E157B213DDE42300EA4C72 /* GradesPortraitTablet.png in Resources */,
+				D8E157B313DDE42300EA4C72 /* GradesPortraitTablet@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
