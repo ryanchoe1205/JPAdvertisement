@@ -72,16 +72,16 @@ static NSString *contentSizeIdentifierForCurrentInterface() {
 
 @implementation JPAdvertisementBannerViewController
 
-	@synthesize adButton;
+@synthesize adButton;
 
-	@synthesize adURL, linkShareURL;
-	@synthesize affiliatedLink;
+@synthesize adURL, linkShareURL;
+@synthesize affiliatedLink;
 
-	@synthesize adImagePortrait, adImageLandscape;
+@synthesize adImagePortrait, adImageLandscape;
 
-	@synthesize requiredContentSizeIdentifiers, currentContentSizeIdentifier;
-	
-	@synthesize hidden, frame;
+@synthesize requiredContentSizeIdentifiers, currentContentSizeIdentifier;
+
+@synthesize hidden, frame;
 
 
 #pragma mark - Ad Loading
@@ -93,12 +93,12 @@ static NSString *contentSizeIdentifierForCurrentInterface() {
 	BOOL completeData = YES;
 	
 	//check for all data keys to have a real value
-//	for (NSString *key in [data allKeys]) {
-//		if (nil == [data valueForKey:key]) {
-//			completeData = NO;
-//		}
-//	}
-
+	//	for (NSString *key in [data allKeys]) {
+	//		if (nil == [data valueForKey:key]) {
+	//			completeData = NO;
+	//		}
+	//	}
+	
 	if (completeData) {
 		self.adURL = [NSURL URLWithString:[data valueForKey:@"adURL"]];
 		self.affiliatedLink = [data valueForKey:@"affiliatedLink"] ? YES : NO;
@@ -152,6 +152,7 @@ static NSString *contentSizeIdentifierForCurrentInterface() {
 
 // Process a LinkShare/TradeDoubler/DGM URL to something iPhone can handle
 - (void)openReferralURL:(NSURL *)referralURL {
+	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:[NSURLRequest requestWithURL:adURL] delegate:self startImmediately:YES];
     [conn release];
 }
@@ -164,6 +165,7 @@ static NSString *contentSizeIdentifierForCurrentInterface() {
 
 // No more redirects; use the last URL saved
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     [[UIApplication sharedApplication] openURL:self.linkShareURL];
 }
 
@@ -204,6 +206,7 @@ static NSString *contentSizeIdentifierForCurrentInterface() {
 		
 		UIButton *button = [[UIButton alloc] initWithFrame:(CGRect) {CGPointZero, viewSize}];
 		self.adButton = button;
+		[self.adButton addTarget:self action:@selector(adTapped:) forControlEvents:UIControlEventTouchUpInside];
 		[button release];
 		[self.view addSubview:adButton];
 	}
@@ -220,7 +223,7 @@ static NSString *contentSizeIdentifierForCurrentInterface() {
 	
 	[requiredContentSizeIdentifiers release];
 	[currentContentSizeIdentifier release];
-		
+	
     [super dealloc];
 }
 
@@ -280,7 +283,7 @@ static NSString *contentSizeIdentifierForCurrentInterface() {
 
 
 - (void) deviceRotated:(id) sender {
-
+	
 	[self layoutAdForCurrentOrientation];
 	
 	CGSize size = [self sizeFromBannerContentSizeIdentifier:currentContentSizeIdentifier];
