@@ -4,12 +4,12 @@ JPAdvertisementBannerViewController is a near drop in replacement for ADBannerVi
 
 h2. Use
 
-To use JPAdvertisement copy the two classes from the folder JPAdvert. JPAdvertisementBannerViewController is the base class which handles displaying an advertisement as it is a view controller.
+To use JPAdvertisement copy the JPAdvertisementBannerViewController class from the JPAdvert folder. Include in your Copy Bundle Resources the plist and image files for you advertisement.
 
-JPAdViewController is an empty subclass that exists for the sole purpose of shortening the class name to save typing. I recommend using this.
+Documentation is available at http://joepasq.com/documentation/jpadvertisement/
 
 h2. Custom Ads
 
-In order to load an ad from disk JPAdvertisement uses a plist, the name of which is passed to it via loadAdFromPlistNamed:. In that plist it looks for four keys; the adURL, affiliatedLink boolean, and file names of png images for landscape and portrait ads depending upon what device it is currently running on. 
+In order to load an ad from disk JPAdvertisement uses a plist, the name of which is passed to it via loadAdFromPlistNamed:. In that plist it looks for four keys; the adURL, affiliatedLink boolean, and file names of png images for landscape and portrait ads depending upon what device it is currently running on. See the Grades Sample Ad folder and mimic that to make your own ads.
 
-Refactoring this to load external ads is a goal for the next major release, pending priorities.
+Modifying this to download external ads is a goal for the next major release, pending priorities.

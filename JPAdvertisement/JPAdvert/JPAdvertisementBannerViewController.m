@@ -81,6 +81,8 @@ static NSString *contentSizeIdentifierForCurrentInterface() {
 
 @synthesize requiredContentSizeIdentifiers, currentContentSizeIdentifier;
 
+@synthesize adClicked, clickThroughFailed;
+
 @synthesize hidden, frame;
 
 
@@ -90,16 +92,7 @@ static NSString *contentSizeIdentifierForCurrentInterface() {
 	
 	NSDictionary *data = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:plist ofType:@"plist"]];
 	
-	BOOL completeData = YES;
-	
-	//check for all data keys to have a real value
-	//	for (NSString *key in [data allKeys]) {
-	//		if (nil == [data valueForKey:key]) {
-	//			completeData = NO;
-	//		}
-	//	}
-	
-	if (completeData) {
+	if (data != nil) {
 		self.adURL = [NSURL URLWithString:[data valueForKey:@"adURL"]];
 		self.affiliatedLink = [data valueForKey:@"affiliatedLink"] ? YES : NO;
 		
@@ -122,14 +115,25 @@ static NSString *contentSizeIdentifierForCurrentInterface() {
 }
 
 
-#pragma mark - UI
+#pragma mark - Advertisement handling
 
-- (IBAction) adTapped:(UIButton *) sender {
+- (void) adTapped:(UIButton *) sender {
 	if (affiliatedLink) {
-		[self openReferralURL:adURL];
-	} else
-		[[UIApplication sharedApplication] openURL:adURL];
+		[self openReferralURL:self.adURL];
+	} else { 
+		if ([[UIApplication sharedApplication] canOpenURL:self.adURL]) {
+			if (self.adClicked) {
+				self.adClicked();
+			}
+			[[UIApplication sharedApplication] openURL:self.adURL];
+		} else
+			if (self.clickThroughFailed) {
+				self.clickThroughFailed();
+			}
+	}
 }
+
+#pragma mark - Ad Sizing
 
 + (CGSize) sizeFromBannerContentSizeIdentifier:(NSString *)contentSizeIdentifier {
 	if (contentSizeIdentifier == JPAdvertisementHandheldLandscape) {
@@ -165,11 +169,22 @@ static NSString *contentSizeIdentifierForCurrentInterface() {
 
 // No more redirects; use the last URL saved
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-    [[UIApplication sharedApplication] openURL:self.linkShareURL];
+	UIApplication *app = [UIApplication sharedApplication];
+	[app setNetworkActivityIndicatorVisible:NO];
+	
+	if ([app canOpenURL:self.linkShareURL]) {
+		if (self.adClicked) {
+			self.adClicked();
+		}
+		[app openURL:self.linkShareURL];
+	} else {
+		if (self.clickThroughFailed) {
+			self.clickThroughFailed();
+		}
+	}
 }
 
-#pragma mark - UIView methods
+#pragma mark - Exposed UIView methods
 
 - (void) setHidden:(BOOL)paramHidden {
 	self.view.hidden = paramHidden;
@@ -187,7 +202,7 @@ static NSString *contentSizeIdentifierForCurrentInterface() {
 	return self.view.frame;
 }
 
-#pragma mark - Memory Management
+#pragma mark - Initializers
 
 - (id) init {
 	return [self initWithOrigin:CGPointZero];
@@ -213,19 +228,25 @@ static NSString *contentSizeIdentifierForCurrentInterface() {
 	return self;
 }
 
+#pragma mark - Dealloc
 
 - (void)dealloc {
 	[adButton release], adButton = nil;
-	[adURL release];
-	[linkShareURL release];
+	[adURL release], adURL = nil;
+	[linkShareURL release], linkShareURL = nil;
 	
 	[adImagePortrait release], [adImageLandscape release];
 	
 	[requiredContentSizeIdentifiers release];
 	[currentContentSizeIdentifier release];
 	
+	[adClicked release];
+	[clickThroughFailed release];
+	
     [super dealloc];
 }
+
+#pragma mark - View lifecycle
 
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
@@ -235,8 +256,16 @@ static NSString *contentSizeIdentifierForCurrentInterface() {
 }
 
 
-
-#pragma mark - View lifecycle
+- (NSString *) description {
+	if (self.affiliatedLink) {
+		return [NSString stringWithFormat:@"%@ with affiliated link: %@", [super description], self.linkShareURL];
+	} else {
+		return [NSString stringWithFormat:@"%@ with ad URL: %@", [super description], self.adURL];
+	}
+	
+	
+	return [NSString stringWithFormat:@"%@ with ad URL: %@, linkshare URL: %@ and isAffiliate:%@", [super description], self.adURL, self.linkShareURL, self.affiliatedLink?@"NO":@"YES"];
+}
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -260,6 +289,8 @@ static NSString *contentSizeIdentifierForCurrentInterface() {
 - (void) viewDidAppear:(BOOL)animated {
 	[self layoutAdForCurrentOrientation];
 }
+
+#pragma mark - Multiple Orientation Support
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return YES;

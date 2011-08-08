@@ -32,12 +32,12 @@
  */
 
 #import <UIKit/UIKit.h>
-#import "JPAdViewController.h"
+#import "JPAdvertisementBannerViewController.h"
 
 @interface JPStandInViewController : UIViewController {
-    JPAdViewController *adViewC;
+    JPAdvertisementBannerViewController *adViewC;
 }
 
-@property (nonatomic, retain) JPAdViewController *adViewC;
+@property (nonatomic, retain) JPAdvertisementBannerViewController *adViewC;
 
 @end

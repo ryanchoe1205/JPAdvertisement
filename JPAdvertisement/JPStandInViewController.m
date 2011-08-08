@@ -59,7 +59,7 @@
 {
 	[super viewDidLoad];
 
-	self.adViewC = [[JPAdViewController alloc] initWithOrigin:CGPointMake(0, 70)];
+	self.adViewC = [[JPAdvertisementBannerViewController alloc] initWithOrigin:CGPointMake(0, 70)];
 //	self.adViewC.requiredContentSizeIdentifiers = [NSSet setWithObjects:JPAdvertisementHandheldLandscape, JPAdvertisementHandheldPortrait, nil];
 	[self.view addSubview:adViewC.view];
 }
