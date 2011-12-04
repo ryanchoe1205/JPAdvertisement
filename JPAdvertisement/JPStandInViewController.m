@@ -37,11 +37,6 @@
 
 @synthesize adViewC;
 
-- (void)dealloc
-{
-	[adViewC release];
-    [super dealloc];
-}
 
 - (void)didReceiveMemoryWarning
 {

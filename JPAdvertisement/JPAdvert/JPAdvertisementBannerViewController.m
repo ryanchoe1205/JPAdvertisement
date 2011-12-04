@@ -162,8 +162,8 @@ static NSString *contentSizeIdentifierForCurrentInterface() {
 // Process a LinkShare/TradeDoubler/DGM URL to something iPhone can handle
 - (void)openReferralURL:(NSURL *)referralURL {
 	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-    NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:[NSURLRequest requestWithURL:adURL] delegate:self startImmediately:YES];
-    [conn release];
+    if ([[NSURLConnection alloc] initWithRequest:[NSURLRequest requestWithURL:adURL] delegate:self startImmediately:YES] == nil)
+		NSLog(@"!! Error in NSURLConnection initialization. JPAdvertisementBannerViewController %d", __LINE__);
 }
 
 // Save the most recent URL in case multiple redirects occur
@@ -224,7 +224,6 @@ static NSString *contentSizeIdentifierForCurrentInterface() {
 		
 		UIButton *button = [[UIButton alloc] initWithFrame:(CGRect) {CGPointZero, viewSize}];
 		self.adButton = button;
-		[button release];
 		[self.adButton addTarget:self action:@selector(adTapped:) forControlEvents:UIControlEventTouchUpInside];
 		[self.view addSubview:adButton];
 	}
@@ -234,19 +233,15 @@ static NSString *contentSizeIdentifierForCurrentInterface() {
 #pragma mark - Dealloc
 
 - (void)dealloc {
-	[adButton release], adButton = nil;
-	[adURL release], adURL = nil;
-	[linkShareURL release], linkShareURL = nil;
+	adButton = nil;
+	adURL = nil;
+	linkShareURL = nil;
 	
-	[adImagePortrait release], [adImageLandscape release];
+	adImagePortrait = nil;
+	adImageLandscape = nil;
 	
-	[requiredContentSizeIdentifiers release];
-	[currentContentSizeIdentifier release];
-	
-	[adClicked release];
-	[clickThroughFailed release];
-	
-    [super dealloc];
+	adClicked = nil;
+	clickThroughFailed = nil;
 }
 
 #pragma mark - View lifecycle

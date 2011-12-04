@@ -69,7 +69,7 @@ typedef void (^AdvertisementVoidBlock) (void);
 
 /** @name User Interface */
 /** The button shown to the user that takes up all the entire view's frame. */
-@property (nonatomic, retain) UIButton *adButton;
+@property (nonatomic, strong) UIButton *adButton;
 
 /** @name URLs */
 /** The advertisement URL. Read from loaded plist.

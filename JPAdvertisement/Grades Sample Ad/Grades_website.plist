@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>adURL</key>
+	<string>http://gradesapp.com</string>
+	<key>affiliatedLink</key>
+	<false/>
+	<key>handheldLandscapeImage</key>
+	<string>GradesLandscapeHandheld.png</string>
+	<key>handheldPortraitImage</key>
+	<string>GradesPortraitHandheld.png</string>
+	<key>tabletPortraitImage</key>
+	<string>GradesPortraitTablet.png</string>
+	<key>tabletLandscapeImage</key>
+	<string>GradesLandscapeTablet.png</string>
+</dict>
+</plist>

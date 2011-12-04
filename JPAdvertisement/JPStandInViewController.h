@@ -38,6 +38,6 @@
     JPAdvertisementBannerViewController *adViewC;
 }
 
-@property (nonatomic, retain) JPAdvertisementBannerViewController *adViewC;
+@property (nonatomic, strong) JPAdvertisementBannerViewController *adViewC;
 
 @end
