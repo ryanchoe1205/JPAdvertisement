@@ -7,6 +7,7 @@
  
  http://joepasq.com 
  https://github.com/joepasq
+ http://joepasq.com/documentation/jpadvertisement
  
  Permission is hereby granted, free of charge, to any person
  obtaining a copy of this software and associated documentation
@@ -41,11 +42,13 @@ static NSString *const JPAdvertisementTabletPortrait = @"JPAdvertisementTabletPo
 
 typedef void (^AdvertisementVoidBlock) (void);
 
-/** JPAdvertisementBannerViewController is a near drop in replacement for ADBannerView. Meant as a local/cached version of iAds. Ads are loaded from self made .plist files, an example ad for Grades 2 http://gradesapp.com is included and used in the demo project.
+/** Near Drop in replacement for iAds. Meant as a local/cached version of iAds. Ads are loaded from .plist files. 
  
- To use JPAdvertisement copy the JPAdvertisementBannerViewController class from the JPAdvert folder. Include in your Copy Bundle Resources the plist and image files for you advertisement.
-  
- In order to load an ad from disk JPAdvertisement uses a plist, the name of which is passed to it via loadAdFromPlistNamed:. In that plist it looks for four keys; the adURL, affiliatedLink boolean, and file names of png images for landscape and portrait ads depending upon what device it is currently running on. See the Grades Sample Ad folder and mimic that to make your own ads.
+ To use JPAdvertisement copy the two classes from the folder JPAdvert. JPAdvertisementBannerViewController is the base class which handles displaying an advertisement as it is a view controller.
+ 
+ JPAdViewController is an empty subclass that exists for the sole purpose of shortening the class name to save typing. I recommend using this.
+ 
+ In order to load an ad from disk JPAdvertisement uses a plist, the name of which is passed to it via loadAdFromPlistNamed:. In that plist it looks for four keys; the adURL, affiliatedLink boolean, and file names of png images for landscape and portrait ads depending upon what device it is currently running on. 
  */ 
 @interface JPAdvertisementBannerViewController : UIViewController {
 @private

@@ -7,6 +7,7 @@
  
  http://joepasq.com 
  https://github.com/joepasq
+ http://joepasq.com/documentation/jpadvertisement
  
  Permission is hereby granted, free of charge, to any person
  obtaining a copy of this software and associated documentation
@@ -104,6 +105,12 @@ static NSString *contentSizeIdentifierForCurrentInterface() {
 			self.adImagePortrait = [data valueForKey:@"tabletPortraitImage"];
 		}
 		
+		NSString *fileAdURL = [data valueForKey:@"adURL"];
+		
+		if ([fileAdURL isEqualToString:@"nil"] || [fileAdURL isEqualToString:@""]) {
+			[self.adButton removeTarget:self action:@selector(adTapped:) forControlEvents:UIControlEventTouchUpInside];
+		}
+		
 		[self layoutAdForCurrentOrientation];
 		return YES;
 	} else
@@ -122,14 +129,12 @@ static NSString *contentSizeIdentifierForCurrentInterface() {
 		[self openReferralURL:self.adURL];
 	} else { 
 		if ([[UIApplication sharedApplication] canOpenURL:self.adURL]) {
-			if (self.adClicked) {
+			if (self.adClicked)
 				self.adClicked();
-			}
 			[[UIApplication sharedApplication] openURL:self.adURL];
 		} else
-			if (self.clickThroughFailed) {
+			if (self.clickThroughFailed)
 				self.clickThroughFailed();
-			}
 	}
 }
 
@@ -173,14 +178,12 @@ static NSString *contentSizeIdentifierForCurrentInterface() {
 	[app setNetworkActivityIndicatorVisible:NO];
 	
 	if ([app canOpenURL:self.linkShareURL]) {
-		if (self.adClicked) {
+		if (self.adClicked)
 			self.adClicked();
-		}
 		[app openURL:self.linkShareURL];
 	} else {
-		if (self.clickThroughFailed) {
+		if (self.clickThroughFailed)
 			self.clickThroughFailed();
-		}
 	}
 }
 
@@ -221,8 +224,8 @@ static NSString *contentSizeIdentifierForCurrentInterface() {
 		
 		UIButton *button = [[UIButton alloc] initWithFrame:(CGRect) {CGPointZero, viewSize}];
 		self.adButton = button;
-		[self.adButton addTarget:self action:@selector(adTapped:) forControlEvents:UIControlEventTouchUpInside];
 		[button release];
+		[self.adButton addTarget:self action:@selector(adTapped:) forControlEvents:UIControlEventTouchUpInside];
 		[self.view addSubview:adButton];
 	}
 	return self;
@@ -264,7 +267,7 @@ static NSString *contentSizeIdentifierForCurrentInterface() {
 	}
 	
 	
-	return [NSString stringWithFormat:@"%@ with ad URL: %@, linkshare URL: %@ and isAffiliate:%@", [super description], self.adURL, self.linkShareURL, self.affiliatedLink?@"NO":@"YES"];
+	return [NSString stringWithFormat:@"%@ with ad URL: %@, linkshare URL: %@ and isAffiliate:%@", [super description], self.adURL, self.linkShareURL, (self.affiliatedLink ? @"NO" : @"YES")];
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
