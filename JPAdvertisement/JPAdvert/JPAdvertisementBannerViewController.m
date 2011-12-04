@@ -118,7 +118,7 @@ static NSString *contentSizeIdentifierForCurrentInterface() {
 }
 
 - (BOOL) loadAd {
-	return [self loadAdFromPlistNamed:@"Grades"];
+	return [self loadAdFromPlistNamed:@"Grades_website"]; //Switch to Grades_appstore on device to see LinkShare URL in action.
 }
 
 
