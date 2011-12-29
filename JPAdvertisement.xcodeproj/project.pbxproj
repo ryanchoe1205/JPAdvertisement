@@ -19,9 +19,17 @@
 		068ECB9E1386DC5C0012C46C /* JPStandInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 068ECB9C1386DC5C0012C46C /* JPStandInViewController.m */; };
 		068ECB9F1386DC5C0012C46C /* JPAdvertisementPlaygroundViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 068ECB9D1386DC5C0012C46C /* JPAdvertisementPlaygroundViewController.xib */; };
 		D888211D13F05F6400FBA136 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = D888211C13F05F6400FBA136 /* LICENSE */; };
-		D888211F13F05F6900FBA136 /* README.textile in Resources */ = {isa = PBXBuildFile; fileRef = D888211E13F05F6900FBA136 /* README.textile */; };
 		D89FF068148B0DC200D1BAD5 /* Grades_appstore.plist in Resources */ = {isa = PBXBuildFile; fileRef = D89FF066148B0DC200D1BAD5 /* Grades_appstore.plist */; };
 		D89FF069148B0DC200D1BAD5 /* Grades_website.plist in Resources */ = {isa = PBXBuildFile; fileRef = D89FF067148B0DC200D1BAD5 /* Grades_website.plist */; };
+		D8A954FE14ABB81C0045568E /* GradesLandscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A954F614ABB81C0045568E /* GradesLandscape@2x~ipad.png */; };
+		D8A954FF14ABB81C0045568E /* GradesLandscape@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A954F714ABB81C0045568E /* GradesLandscape@2x~iphone.png */; };
+		D8A9550014ABB81C0045568E /* GradesLandscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A954F814ABB81C0045568E /* GradesLandscape~ipad.png */; };
+		D8A9550114ABB81C0045568E /* GradesLandscape~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A954F914ABB81C0045568E /* GradesLandscape~iphone.png */; };
+		D8A9550214ABB81C0045568E /* GradesPortrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A954FA14ABB81C0045568E /* GradesPortrait@2x~ipad.png */; };
+		D8A9550314ABB81C0045568E /* GradesPortrait@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A954FB14ABB81C0045568E /* GradesPortrait@2x~iphone.png */; };
+		D8A9550414ABB81C0045568E /* GradesPortrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A954FC14ABB81C0045568E /* GradesPortrait~ipad.png */; };
+		D8A9550514ABB81C0045568E /* GradesPortrait~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A954FD14ABB81C0045568E /* GradesPortrait~iphone.png */; };
+		D8A9550714ABB9060045568E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D8A9550614ABB9060045568E /* README.md */; };
 		D8E1579A13DDE3F900EA4C72 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E1579213DDE3F900EA4C72 /* Icon-72.png */; };
 		D8E1579B13DDE3F900EA4C72 /* Icon-AppStore.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D8E1579313DDE3F900EA4C72 /* Icon-AppStore.jpg */; };
 		D8E1579C13DDE3F900EA4C72 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E1579413DDE3F900EA4C72 /* Icon-Small-50.png */; };
@@ -30,14 +38,6 @@
 		D8E1579F13DDE3F900EA4C72 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E1579713DDE3F900EA4C72 /* Icon.png */; };
 		D8E157A013DDE3F900EA4C72 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E1579813DDE3F900EA4C72 /* Icon@2x.png */; };
 		D8E157A113DDE3F900EA4C72 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = D8E1579913DDE3F900EA4C72 /* iTunesArtwork */; };
-		D8E157AC13DDE42300EA4C72 /* GradesLandscapeHandheld.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E157A313DDE42300EA4C72 /* GradesLandscapeHandheld.png */; };
-		D8E157AD13DDE42300EA4C72 /* GradesLandscapeHandheld@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E157A413DDE42300EA4C72 /* GradesLandscapeHandheld@2x.png */; };
-		D8E157AE13DDE42300EA4C72 /* GradesLandscapeTablet.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E157A513DDE42300EA4C72 /* GradesLandscapeTablet.png */; };
-		D8E157AF13DDE42300EA4C72 /* GradesLandscapeTablet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E157A613DDE42300EA4C72 /* GradesLandscapeTablet@2x.png */; };
-		D8E157B013DDE42300EA4C72 /* GradesPortraitHandheld.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E157A713DDE42300EA4C72 /* GradesPortraitHandheld.png */; };
-		D8E157B113DDE42300EA4C72 /* GradesPortraitHandheld@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E157A813DDE42300EA4C72 /* GradesPortraitHandheld@2x.png */; };
-		D8E157B213DDE42300EA4C72 /* GradesPortraitTablet.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E157A913DDE42300EA4C72 /* GradesPortraitTablet.png */; };
-		D8E157B313DDE42300EA4C72 /* GradesPortraitTablet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E157AA13DDE42300EA4C72 /* GradesPortraitTablet@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,9 +59,17 @@
 		068ECB9C1386DC5C0012C46C /* JPStandInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPStandInViewController.m; sourceTree = "<group>"; };
 		068ECB9D1386DC5C0012C46C /* JPAdvertisementPlaygroundViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JPAdvertisementPlaygroundViewController.xib; sourceTree = "<group>"; };
 		D888211C13F05F6400FBA136 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		D888211E13F05F6900FBA136 /* README.textile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.textile; sourceTree = "<group>"; };
 		D89FF066148B0DC200D1BAD5 /* Grades_appstore.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Grades_appstore.plist; path = "JPAdvertisement/Grades Sample Ad/Grades_appstore.plist"; sourceTree = SOURCE_ROOT; };
 		D89FF067148B0DC200D1BAD5 /* Grades_website.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Grades_website.plist; path = "JPAdvertisement/Grades Sample Ad/Grades_website.plist"; sourceTree = SOURCE_ROOT; };
+		D8A954F614ABB81C0045568E /* GradesLandscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GradesLandscape@2x~ipad.png"; path = "JPAdvertisement/Grades Sample Ad/GradesLandscape@2x~ipad.png"; sourceTree = SOURCE_ROOT; };
+		D8A954F714ABB81C0045568E /* GradesLandscape@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GradesLandscape@2x~iphone.png"; path = "JPAdvertisement/Grades Sample Ad/GradesLandscape@2x~iphone.png"; sourceTree = SOURCE_ROOT; };
+		D8A954F814ABB81C0045568E /* GradesLandscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GradesLandscape~ipad.png"; path = "JPAdvertisement/Grades Sample Ad/GradesLandscape~ipad.png"; sourceTree = SOURCE_ROOT; };
+		D8A954F914ABB81C0045568E /* GradesLandscape~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GradesLandscape~iphone.png"; path = "JPAdvertisement/Grades Sample Ad/GradesLandscape~iphone.png"; sourceTree = SOURCE_ROOT; };
+		D8A954FA14ABB81C0045568E /* GradesPortrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GradesPortrait@2x~ipad.png"; path = "JPAdvertisement/Grades Sample Ad/GradesPortrait@2x~ipad.png"; sourceTree = SOURCE_ROOT; };
+		D8A954FB14ABB81C0045568E /* GradesPortrait@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GradesPortrait@2x~iphone.png"; path = "JPAdvertisement/Grades Sample Ad/GradesPortrait@2x~iphone.png"; sourceTree = SOURCE_ROOT; };
+		D8A954FC14ABB81C0045568E /* GradesPortrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GradesPortrait~ipad.png"; path = "JPAdvertisement/Grades Sample Ad/GradesPortrait~ipad.png"; sourceTree = SOURCE_ROOT; };
+		D8A954FD14ABB81C0045568E /* GradesPortrait~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GradesPortrait~iphone.png"; path = "JPAdvertisement/Grades Sample Ad/GradesPortrait~iphone.png"; sourceTree = SOURCE_ROOT; };
+		D8A9550614ABB9060045568E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		D8E1579213DDE3F900EA4C72 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		D8E1579313DDE3F900EA4C72 /* Icon-AppStore.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Icon-AppStore.jpg"; sourceTree = "<group>"; };
 		D8E1579413DDE3F900EA4C72 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
@@ -70,14 +78,6 @@
 		D8E1579713DDE3F900EA4C72 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		D8E1579813DDE3F900EA4C72 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		D8E1579913DDE3F900EA4C72 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
-		D8E157A313DDE42300EA4C72 /* GradesLandscapeHandheld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GradesLandscapeHandheld.png; path = "JPAdvertisement/Grades Sample Ad/GradesLandscapeHandheld.png"; sourceTree = SOURCE_ROOT; };
-		D8E157A413DDE42300EA4C72 /* GradesLandscapeHandheld@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GradesLandscapeHandheld@2x.png"; path = "JPAdvertisement/Grades Sample Ad/GradesLandscapeHandheld@2x.png"; sourceTree = SOURCE_ROOT; };
-		D8E157A513DDE42300EA4C72 /* GradesLandscapeTablet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GradesLandscapeTablet.png; path = "JPAdvertisement/Grades Sample Ad/GradesLandscapeTablet.png"; sourceTree = SOURCE_ROOT; };
-		D8E157A613DDE42300EA4C72 /* GradesLandscapeTablet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GradesLandscapeTablet@2x.png"; path = "JPAdvertisement/Grades Sample Ad/GradesLandscapeTablet@2x.png"; sourceTree = SOURCE_ROOT; };
-		D8E157A713DDE42300EA4C72 /* GradesPortraitHandheld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GradesPortraitHandheld.png; path = "JPAdvertisement/Grades Sample Ad/GradesPortraitHandheld.png"; sourceTree = SOURCE_ROOT; };
-		D8E157A813DDE42300EA4C72 /* GradesPortraitHandheld@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GradesPortraitHandheld@2x.png"; path = "JPAdvertisement/Grades Sample Ad/GradesPortraitHandheld@2x.png"; sourceTree = SOURCE_ROOT; };
-		D8E157A913DDE42300EA4C72 /* GradesPortraitTablet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GradesPortraitTablet.png; path = "JPAdvertisement/Grades Sample Ad/GradesPortraitTablet.png"; sourceTree = SOURCE_ROOT; };
-		D8E157AA13DDE42300EA4C72 /* GradesPortraitTablet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GradesPortraitTablet@2x.png"; path = "JPAdvertisement/Grades Sample Ad/GradesPortraitTablet@2x.png"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				D888211C13F05F6400FBA136 /* LICENSE */,
-				D888211E13F05F6900FBA136 /* README.textile */,
+				D8A9550614ABB9060045568E /* README.md */,
 				068ECB741386D7750012C46C /* JPAdvertisement */,
 				068ECB6D1386D7750012C46C /* Frameworks */,
 				068ECB6B1386D7750012C46C /* Products */,
@@ -190,14 +190,14 @@
 			children = (
 				D89FF066148B0DC200D1BAD5 /* Grades_appstore.plist */,
 				D89FF067148B0DC200D1BAD5 /* Grades_website.plist */,
-				D8E157A313DDE42300EA4C72 /* GradesLandscapeHandheld.png */,
-				D8E157A413DDE42300EA4C72 /* GradesLandscapeHandheld@2x.png */,
-				D8E157A513DDE42300EA4C72 /* GradesLandscapeTablet.png */,
-				D8E157A613DDE42300EA4C72 /* GradesLandscapeTablet@2x.png */,
-				D8E157A713DDE42300EA4C72 /* GradesPortraitHandheld.png */,
-				D8E157A813DDE42300EA4C72 /* GradesPortraitHandheld@2x.png */,
-				D8E157A913DDE42300EA4C72 /* GradesPortraitTablet.png */,
-				D8E157AA13DDE42300EA4C72 /* GradesPortraitTablet@2x.png */,
+				D8A954F614ABB81C0045568E /* GradesLandscape@2x~ipad.png */,
+				D8A954F714ABB81C0045568E /* GradesLandscape@2x~iphone.png */,
+				D8A954F814ABB81C0045568E /* GradesLandscape~ipad.png */,
+				D8A954F914ABB81C0045568E /* GradesLandscape~iphone.png */,
+				D8A954FA14ABB81C0045568E /* GradesPortrait@2x~ipad.png */,
+				D8A954FB14ABB81C0045568E /* GradesPortrait@2x~iphone.png */,
+				D8A954FC14ABB81C0045568E /* GradesPortrait~ipad.png */,
+				D8A954FD14ABB81C0045568E /* GradesPortrait~iphone.png */,
 			);
 			name = "Grades Sample Ad";
 			path = Grades;
@@ -228,7 +228,7 @@
 				068ECB661386D7750012C46C /* Sources */,
 				068ECB671386D7750012C46C /* Frameworks */,
 				068ECB681386D7750012C46C /* Resources */,
-				D888211A13F05C8700FBA136 /* ShellScript */,
+				D888211A13F05C8700FBA136 /* Build documentation */,
 			);
 			buildRules = (
 			);
@@ -281,31 +281,32 @@
 				D8E1579F13DDE3F900EA4C72 /* Icon.png in Resources */,
 				D8E157A013DDE3F900EA4C72 /* Icon@2x.png in Resources */,
 				D8E157A113DDE3F900EA4C72 /* iTunesArtwork in Resources */,
-				D8E157AC13DDE42300EA4C72 /* GradesLandscapeHandheld.png in Resources */,
-				D8E157AD13DDE42300EA4C72 /* GradesLandscapeHandheld@2x.png in Resources */,
-				D8E157AE13DDE42300EA4C72 /* GradesLandscapeTablet.png in Resources */,
-				D8E157AF13DDE42300EA4C72 /* GradesLandscapeTablet@2x.png in Resources */,
-				D8E157B013DDE42300EA4C72 /* GradesPortraitHandheld.png in Resources */,
-				D8E157B113DDE42300EA4C72 /* GradesPortraitHandheld@2x.png in Resources */,
-				D8E157B213DDE42300EA4C72 /* GradesPortraitTablet.png in Resources */,
-				D8E157B313DDE42300EA4C72 /* GradesPortraitTablet@2x.png in Resources */,
 				D888211D13F05F6400FBA136 /* LICENSE in Resources */,
-				D888211F13F05F6900FBA136 /* README.textile in Resources */,
 				D89FF068148B0DC200D1BAD5 /* Grades_appstore.plist in Resources */,
 				D89FF069148B0DC200D1BAD5 /* Grades_website.plist in Resources */,
+				D8A954FE14ABB81C0045568E /* GradesLandscape@2x~ipad.png in Resources */,
+				D8A954FF14ABB81C0045568E /* GradesLandscape@2x~iphone.png in Resources */,
+				D8A9550014ABB81C0045568E /* GradesLandscape~ipad.png in Resources */,
+				D8A9550114ABB81C0045568E /* GradesLandscape~iphone.png in Resources */,
+				D8A9550214ABB81C0045568E /* GradesPortrait@2x~ipad.png in Resources */,
+				D8A9550314ABB81C0045568E /* GradesPortrait@2x~iphone.png in Resources */,
+				D8A9550414ABB81C0045568E /* GradesPortrait~ipad.png in Resources */,
+				D8A9550514ABB81C0045568E /* GradesPortrait~iphone.png in Resources */,
+				D8A9550714ABB9060045568E /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		D888211A13F05C8700FBA136 /* ShellScript */ = {
+		D888211A13F05C8700FBA136 /* Build documentation */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Build documentation";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;

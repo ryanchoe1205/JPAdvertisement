@@ -97,13 +97,8 @@ static NSString *contentSizeIdentifierForCurrentInterface() {
 		self.adURL = [NSURL URLWithString:[data valueForKey:@"adURL"]];
 		self.affiliatedLink = [data valueForKey:@"affiliatedLink"] ? YES : NO;
 		
-		if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-			self.adImageLandscape = [data valueForKey:@"handheldLandscapeImage"];
-			self.adImagePortrait = [data valueForKey:@"handheldPortraitImage"];
-		} else if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-			self.adImageLandscape = [data valueForKey:@"tabletLandscapeImage"];
-			self.adImagePortrait = [data valueForKey:@"tabletPortraitImage"];
-		}
+		self.adImagePortrait = [data valueForKey:@"portraitImage"];
+		self.adImageLandscape = [data valueForKey:@"landscapeImage"];
 		
 		NSString *fileAdURL = [data valueForKey:@"adURL"];
 		

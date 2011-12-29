@@ -6,13 +6,9 @@
 	<string>http://u.joepasq.com/4</string>
 	<key>affiliatedLink</key>
 	<true/>
-	<key>handheldLandscapeImage</key>
-	<string>GradesLandscapeHandheld.png</string>
-	<key>handheldPortraitImage</key>
-	<string>GradesPortraitHandheld.png</string>
-	<key>tabletPortraitImage</key>
-	<string>GradesPortraitTablet.png</string>
-	<key>tabletLandscapeImage</key>
-	<string>GradesLandscapeTablet.png</string>
+	<key>portraitImage</key>
+	<string>GradesPortrait.png</string>
+	<key>landscapeImage</key>
+	<string>GradesLandscape.png</string>
 </dict>
 </plist>

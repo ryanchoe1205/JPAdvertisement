@@ -1,0 +1,2 @@
+Changes: • Changed display name to JPAdvert to avoid truncationn on homescreen.
+• Greatly simplified resources loading by relying on UIImage more (https://developer.apple.com/library/ios/#documentation/Cocoa/Conceptual/LoadingResources/Introduction/Introduction.html section Device-Specific resources)

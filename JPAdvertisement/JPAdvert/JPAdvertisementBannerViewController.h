@@ -44,11 +44,24 @@ typedef void (^AdvertisementVoidBlock) (void);
 
 /** Near Drop in replacement for iAds. Meant as a local/cached version of iAds. Ads are loaded from .plist files. 
  
- To use JPAdvertisement copy the two classes from the folder JPAdvert. JPAdvertisementBannerViewController is the base class which handles displaying an advertisement as it is a view controller.
+ To use JPAdvertisement copy the two classes from the folder JPAdvert. JPAdvertisementBannerViewController handles displaying an advertisement as it is a view controller.
+  
+ In order to load an ad from disk JPAdvertisement uses a plist, the name of which is passed to it via `loadAdFromPlistNamed:`. In that plist it looks for four keys; the `adURL`, `affiliatedLink` boolean, and file names of png images for landscape and portrait ads.
  
- JPAdViewController is an empty subclass that exists for the sole purpose of shortening the class name to save typing. I recommend using this.
+ ----
+ ## Image Resources
  
- In order to load an ad from disk JPAdvertisement uses a plist, the name of which is passed to it via loadAdFromPlistNamed:. In that plist it looks for four keys; the adURL, affiliatedLink boolean, and file names of png images for landscape and portrait ads depending upon what device it is currently running on. 
+ If you include @2x retina images and non-retina images, `UIImage` will load the correct resource for the correct resolution. If you include iPad and iPhone resources they should all have the same file name but end with a tilde and the device name in lowercase.
+ 
+ Example files:
+ 
+ - AdvertLandscape~ipad.png
+ - AdvertLandscape~iphone.png
+ - AdvertLandscape@2x-iphone.png
+ 
+ Will all be recorded in the advertisement `.plist` as `AdvertLandscape.png`. As shown here:
+ ![http://joepasq.com/documentation/resources/gradessamplead.png](Grades_appstore.plist.png)
+ 
  */ 
 @interface JPAdvertisementBannerViewController : UIViewController {
 @private
@@ -85,11 +98,12 @@ typedef void (^AdvertisementVoidBlock) (void);
 /** @name Advertisement Image */
 /** Landcsape advertisement image loaded from plist in appropriate size depending on device.Loads retina scale image is loaded if available and on a retina device.
  
- For tablets this must be 1024 x 66. For handhelds this must be 480 x 32. */
+ For iPads this must be `1024x66` and end in `~ipad`. For handhelds this must be `480x32` and end in `~iphone`. 
+ */
 @property (nonatomic, copy) NSString *adImageLandscape;
 /** Portrait advertisement image loaded from plist in appropriate size depending on device. Loads retina scale image is loaded if available and on a retina device.
  
- For tablets this must be 768 x 66. For handhelds this must be 320 x 50. 
+ For iPads this must be `768x66` and end in `~ipad`. For handhelds this must be `320x50` and end in `~iphone`. 
  */
 @property (nonatomic, copy) NSString *adImagePortrait;
 
@@ -99,9 +113,9 @@ typedef void (^AdvertisementVoidBlock) (void);
 @property (nonatomic, copy) NSString *currentContentSizeIdentifier;
 
 /** @name Delegate Blocks */
-/** Calls adClicked when a plain URL ad is opened or when an affiliated link is done registering and then opened. */
+/** Called when an ad's URL is opened or when an affiliated link is done registering and then opened. Called just before the URL is opened. */
 @property (nonatomic, copy) AdvertisementVoidBlock adClicked;
-/** Calls clickThroughFailed when a plain URL cannot open (Safari blocked) or when an affiliated link does not open (LinkShare down, possibly?). */
+/** Called when an ad's URL cannot open (Safari blocked) or when an affiliated link does not open (LinkShare down, possibly?). */
 @property (nonatomic, copy) AdvertisementVoidBlock clickThroughFailed;
 
 /** @name Exposed UIView Methods */
@@ -124,20 +138,14 @@ typedef void (^AdvertisementVoidBlock) (void);
 /** Loads an ad from a property list.
  
  The plist is opened for the keys:
- adURL - NSString
- affiliatedLink - BOOL
+	- adURL : NSString
+	- affiliatedLink : BOOL
+	- portraitImage : NSString
+	- landscapeImage : NSString
  
- If the current device has the userInterfaceIdiom UIUserInterfaceIdiomPhone then these image name keys are loaded:
- handheldLandscapeImage - NSString
- handheldPortraitImage - NSString
+ A single advert plist holds only the base name of the image resource, Apple's frameworks load the correct one pending on the suffix (~device).
  
- If the current device has the userInterfaceIdiom UIUserInterfaceIdiomPad then these image name keys are loaded:
- tabletLandscapeImage - NSString
- tabletPortraitImage - NSString 
- 
- A single plist file can hold both handheld and tablet keys, only the relevant ones will be asked for as appropriate for the current device.
- 
- @warning Retina scale (double resolution) images will be loaded automatically, do not specify @2x in the image name in order to ensure compatibility with non-retina devices. 
+ @warning Retina scale (double resolution) images will be loaded automatically, **do not specify @2x in the plist image name** in order to ensure compatibility with non-retina devices. 
  
  @return YES if the plist loaded is not nil, otherwise no.
  @param plist is the name of a property list file bundled with the application storing the keys described in this method description.
