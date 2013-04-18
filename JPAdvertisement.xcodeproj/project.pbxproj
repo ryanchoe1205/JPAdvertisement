@@ -30,6 +30,7 @@
 		D8A9550414ABB81C0045568E /* GradesPortrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A954FC14ABB81C0045568E /* GradesPortrait~ipad.png */; };
 		D8A9550514ABB81C0045568E /* GradesPortrait~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A954FD14ABB81C0045568E /* GradesPortrait~iphone.png */; };
 		D8A9550714ABB9060045568E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D8A9550614ABB9060045568E /* README.md */; };
+		D8C56E2F1720BFE60077DD60 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8C56E2E1720BFE60077DD60 /* Default-568h@2x.png */; };
 		D8E1579A13DDE3F900EA4C72 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E1579213DDE3F900EA4C72 /* Icon-72.png */; };
 		D8E1579B13DDE3F900EA4C72 /* Icon-AppStore.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D8E1579313DDE3F900EA4C72 /* Icon-AppStore.jpg */; };
 		D8E1579C13DDE3F900EA4C72 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E1579413DDE3F900EA4C72 /* Icon-Small-50.png */; };
@@ -70,6 +71,7 @@
 		D8A954FC14ABB81C0045568E /* GradesPortrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GradesPortrait~ipad.png"; path = "JPAdvertisement/Grades Sample Ad/GradesPortrait~ipad.png"; sourceTree = SOURCE_ROOT; };
 		D8A954FD14ABB81C0045568E /* GradesPortrait~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GradesPortrait~iphone.png"; path = "JPAdvertisement/Grades Sample Ad/GradesPortrait~iphone.png"; sourceTree = SOURCE_ROOT; };
 		D8A9550614ABB9060045568E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		D8C56E2E1720BFE60077DD60 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		D8E1579213DDE3F900EA4C72 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		D8E1579313DDE3F900EA4C72 /* Icon-AppStore.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Icon-AppStore.jpg"; sourceTree = "<group>"; };
 		D8E1579413DDE3F900EA4C72 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 		068ECB5F1386D7750012C46C = {
 			isa = PBXGroup;
 			children = (
+				D8C56E2E1720BFE60077DD60 /* Default-568h@2x.png */,
 				D888211C13F05F6400FBA136 /* LICENSE */,
 				D8A9550614ABB9060045568E /* README.md */,
 				068ECB741386D7750012C46C /* JPAdvertisement */,
@@ -245,6 +248,7 @@
 		068ECB611386D7750012C46C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "IdiogenicOsmoles & PasquaLabs";
 			};
 			buildConfigurationList = 068ECB641386D7750012C46C /* Build configuration list for PBXProject "JPAdvertisement" */;
@@ -293,6 +297,7 @@
 				D8A9550414ABB81C0045568E /* GradesPortrait~ipad.png in Resources */,
 				D8A9550514ABB81C0045568E /* GradesPortrait~iphone.png in Resources */,
 				D8A9550714ABB9060045568E /* README.md in Resources */,
+				D8C56E2F1720BFE60077DD60 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,7 +316,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "appledoc --logformat xcode ~/Code/OpenSource/JPAdvertisement";
+			shellScript = "appledoc --logformat xcode $SRCROOT";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -361,6 +366,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -370,7 +376,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				SDKROOT = iphoneos5.0;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -378,6 +385,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = "";
@@ -385,7 +393,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				SDKROOT = iphoneos5.0;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};
