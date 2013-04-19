@@ -9,6 +9,12 @@ To use JPAdvertisement copy the JPAdvertisementBannerViewController class from t
 
 Documentation is available at http://joepasq.com/documentation/jpadvertisement/
 
+### 4" iOS devices
+
+Support for 4" iOS devices is there. The ad sizes are the same. What is missing is Autolayout support. Right now JPAdvertisement uses only the old springs and struts point system for layout.
+
+In adding support for Autolayout I would remove the Interface Builder `.xib`s. 
+
 ## Custom Ads
 
 In order to load an ad from disk JPAdvertisement uses a plist, the name of which is passed to it via `loadAdFromPlistNamed:`. In that plist it looks for four keys; the adURL, affiliatedLink boolean, and file names of png images for landscape and portrait ads. See the Grades Sample Ad folder and mimic that to make your own ads.
