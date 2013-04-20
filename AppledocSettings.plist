@@ -24,7 +24,7 @@
 	<key>--no-create-docset</key>
 	<true/>
 	<key>--output</key>
-	<string>~/Code/OpenSourceDocumentation/JPAdvertisement</string>
+	<string>Documentation/</string>
 	<key>--verbose</key>
 	<integer>3</integer>
 </dict>

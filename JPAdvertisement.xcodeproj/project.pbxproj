@@ -316,7 +316,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "appledoc --logformat xcode $SRCROOT";
+			shellScript = "if [ -d ~/.appledoc ];\n    then\n        appledoc --logformat xcode $SRCROOT\nelse\n    echo 'Did not detect AppleDoc installed in home directory. Skipping documentation generation.';\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
