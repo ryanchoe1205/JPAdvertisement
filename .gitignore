@@ -18,5 +18,9 @@ xcuserstate
 .xcuserstate
 *.xcuserstate
 
+DS_Store
 .DS_Store
 *.DS_Store
+
+Documentation/
+
