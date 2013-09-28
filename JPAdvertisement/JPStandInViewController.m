@@ -54,10 +54,23 @@
 {
 	[super viewDidLoad];
 
-	self.adViewC = [[JPAdvertisementBannerViewController alloc] initWithOrigin:CGPointMake(0, 70)];
-//	self.adViewC.requiredContentSizeIdentifiers = [NSSet setWithObjects:JPAdvertisementHandheldLandscape, JPAdvertisementHandheldPortrait, nil];
+//    self.adViewC = [[JPAdvertisementBannerViewController alloc] initWithWebView:@"http://s5.b51hosting.com/kai/tmp/ios_ad.html"];
+    
+    self.adViewC = [[JPAdvertisementBannerViewController alloc] initWithWebView:@"http://s5.b51hosting.com/kai/tmp/ios_ad.html" adViewSize:(CGSize){300, 250} adButtonText:@"Show AD"];
+    adViewC.adView_WillAppear = ^(void) {
+        NSLog(@"Opening AD Web Page");
+    };
+    adViewC.adView_WillDisappear = ^(void) {
+        NSLog(@"Closing AD Web Page");
+    };
+    
+    adViewC.adClicked = ^(void) {
+        NSLog(@"Clicked AD");	
+    };
+    
 	[self.view addSubview:adViewC.view];
 }
+
 
 - (void) viewWillAppear:(BOOL)animated {
 	[adViewC loadAd];

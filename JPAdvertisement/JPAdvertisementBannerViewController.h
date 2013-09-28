@@ -5,7 +5,7 @@
 //  Created by Joe on 4/26/11.
 /*
  
- http://joepasq.com 
+ http://joepasq.com
  https://github.com/joepasq
  http://joepasq.com/documentation/jpadvertisement
  
@@ -33,19 +33,15 @@
  */
 
 #import <UIKit/UIKit.h>
-
-static NSString *const JPAdvertisementHandheldLandscape = @"JPAdvertisementHandheldLandscape";
-static NSString *const JPAdvertisementHandheldPortrait = @"JPAdvertisementHandheldPortrait";
-
-static NSString *const JPAdvertisementTabletLandscape = @"JPAdvertisementTabletLandscape";
-static NSString *const JPAdvertisementTabletPortrait = @"JPAdvertisementTabletPortrait";
+#import "JPAdViewController.h"
+#import "JPAdvertisementConstants.h"
 
 typedef void (^AdvertisementVoidBlock) (void);
 
-/** Near Drop in replacement for iAds. Meant as a local/cached version of iAds. Ads are loaded from .plist files. 
+/** Near Drop in replacement for iAds. Meant as a local/cached version of iAds. Ads are loaded from .plist files.
  
  To use JPAdvertisement copy the two classes from the folder JPAdvert. JPAdvertisementBannerViewController handles displaying an advertisement as it is a view controller.
-  
+ 
  In order to load an ad from disk JPAdvertisement uses a plist, the name of which is passed to it via `loadAdFromPlistNamed:`. In that plist it looks for four keys; the `adURL`, `affiliatedLink` boolean, and file names of png images for landscape and portrait ads.
  
  ----
@@ -62,15 +58,25 @@ typedef void (^AdvertisementVoidBlock) (void);
  Will all be recorded in the advertisement `.plist` as `AdvertLandscape.png`. As shown here:
  ![http://joepasq.com/documentation/resources/gradessamplead.png](Grades_appstore.plist.png)
  
- */ 
-@interface JPAdvertisementBannerViewController : UIViewController {
+ */
+@interface JPAdvertisementBannerViewController : UIViewController  <JPAdViewControllerDelegate>{
 @private
 	IBOutlet UIButton *adButton;
-	
+    IBOutlet UIView *adWebView;
+    IBOutlet UIView* adWebBackgroundView;
+    
+    JPAdViewController *adWebViewController;
+    
 	NSURL *adURL, *linkShareURL;
 	BOOL affiliatedLink;
 	
 	NSString *adImageLandscape, *adImagePortrait;
+    
+    NSString *adButtonType;
+    NSString *adViewButtonText;
+    NSString *adWebViewURL;
+    BOOL adWebViewLoaded;
+    CGSize adWebViewSize;
 	
 @public
 	NSSet *requiredContentSizeIdentifiers;
@@ -78,11 +84,17 @@ typedef void (^AdvertisementVoidBlock) (void);
 	
 	BOOL hidden;
 	CGRect frame;
+    
 }
 
 /** @name User Interface */
 /** The button shown to the user that takes up all the entire view's frame. */
 @property (nonatomic, strong) UIButton *adButton;
+@property (nonatomic, strong) UIView *adWebView;
+@property (nonatomic, strong) UIView *adWebBackgroundView;
+@property (nonatomic, strong) UIButton *adWebViewCloseButton;
+
+@property (nonatomic, strong) JPAdViewController *adWebViewController;
 
 /** @name URLs */
 /** The advertisement URL. Read from loaded plist.
@@ -98,14 +110,16 @@ typedef void (^AdvertisementVoidBlock) (void);
 /** @name Advertisement Image */
 /** Landcsape advertisement image loaded from plist in appropriate size depending on device.Loads retina scale image is loaded if available and on a retina device.
  
- For iPads this must be `1024x66` and end in `~ipad`. For handhelds this must be `480x32` and end in `~iphone`. 
+ For iPads this must be `1024x66` and end in `~ipad`. For handhelds this must be `480x32` and end in `~iphone`.
  */
 @property (nonatomic, copy) NSString *adImageLandscape;
 /** Portrait advertisement image loaded from plist in appropriate size depending on device. Loads retina scale image is loaded if available and on a retina device.
  
- For iPads this must be `768x66` and end in `~ipad`. For handhelds this must be `320x50` and end in `~iphone`. 
+ For iPads this must be `768x66` and end in `~ipad`. For handhelds this must be `320x50` and end in `~iphone`.
  */
 @property (nonatomic, copy) NSString *adImagePortrait;
+
+
 
 /** @name Advertisement Size */
 /** Mimics iAd. See ADBannerView. */
@@ -118,11 +132,23 @@ typedef void (^AdvertisementVoidBlock) (void);
 /** Called when an ad's URL cannot open (Safari blocked) or when an affiliated link does not open (LinkShare down, possibly?). */
 @property (nonatomic, copy) AdvertisementVoidBlock clickThroughFailed;
 
+
+@property (nonatomic, copy) AdvertisementVoidBlock adView_WillAppear;
+@property (nonatomic, copy) AdvertisementVoidBlock adView_WillDisappear;
+
+
 /** @name Exposed UIView Methods */
 /** Exposes the hidden property of the view ivar to mimic the way ADBannerView works. */
 @property (nonatomic, getter = isHidden) BOOL hidden;
 /** Exposes the frame property of the view ivar to mimic the way ADBannerView works. */
 @property (nonatomic) CGRect frame;
+
+@property (nonatomic) CGSize adWebViewSize;
+@property (nonatomic, copy) NSString *adButtonType;
+@property (nonatomic, copy) NSString *adViewButtonText;
+@property (nonatomic, copy) NSString *adWebViewURL;
+@property (nonatomic, assign) BOOL adWebViewLoaded;
+
 
 /** @name Ad Sizes */
 /** contentSizeIdentifier can be JPAdvertisementHandheldLandscape, JPAdvertisementHandheldPortrait, JPAdvertisementTabletLandscape or JPAdvertisementTabletPortrait.
@@ -138,14 +164,14 @@ typedef void (^AdvertisementVoidBlock) (void);
 /** Loads an ad from a property list.
  
  The plist is opened for the keys:
-	- adURL : NSString
-	- affiliatedLink : BOOL
-	- portraitImage : NSString
-	- landscapeImage : NSString
+ - adURL : NSString
+ - affiliatedLink : BOOL
+ - portraitImage : NSString
+ - landscapeImage : NSString
  
  A single advert plist holds only the base name of the image resource, Apple's frameworks load the correct one pending on the suffix (~device).
  
- @warning Retina scale (double resolution) images will be loaded automatically, **do not specify @2x in the plist image name** in order to ensure compatibility with non-retina devices. 
+ @warning Retina scale (double resolution) images will be loaded automatically, **do not specify @2x in the plist image name** in order to ensure compatibility with non-retina devices.
  
  @return YES if the plist loaded is not nil, otherwise no.
  @param plist is the name of a property list file bundled with the application storing the keys described in this method description.
@@ -161,6 +187,10 @@ typedef void (^AdvertisementVoidBlock) (void);
 
 /** @name Initalizers */
 - (id) initWithFrame:(CGRect) frame;
-- (id) initWithOrigin:(CGPoint) point;
+- (id) initWithOrigin:(CGPoint) buttonPoint;
 
+- (id) initWithWebView:(NSString*)adViewURL;
+- (id) initWithWebView:(NSString*)adViewURL adViewSize:(CGSize)adViewSize;
+- (id) initWithWebView:(NSString*)adViewURL adButtonText:(NSString*)adButtonText;
+- (id) initWithWebView:(NSString*)adViewURL adViewSize:(CGSize)adViewSize adButtonText:(NSString*)adButtonText;
 @end

@@ -33,30 +33,15 @@
  */
 
 #import "JPAdvertisementBannerViewController.h"
+#
+CGSize handheldPortraitSizeForAdButton = {320, 50};
+CGSize handheldLandscapeSizeForAdButton = {480, 32};
 
-CGSize handheldPortraitSize = {320, 50};
-CGSize handheldLandscape = {480, 32};
+CGSize tabletPortraitSizeForAdButton = {768, 66};
+CGSize tabletLandscapeSizeForAdButton = {1024, 66};
 
-CGSize tabletPortraitSize = {768, 66};
-CGSize tabletLandscapeSize = {1024, 66};
-
-static NSString *contentSizeIdentifierForCurrentInterface() {
-	UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
-	UIUserInterfaceIdiom idiom = [[UIDevice currentDevice] userInterfaceIdiom];
-	
-	if (UIInterfaceOrientationIsPortrait(orientation)) {
-		if (idiom == UIUserInterfaceIdiomPhone)
-			return JPAdvertisementHandheldPortrait;
-		else if (idiom == UIUserInterfaceIdiomPad)
-			return JPAdvertisementTabletPortrait;
-	} else if (UIInterfaceOrientationIsLandscape(orientation)) {
-		if (idiom == UIUserInterfaceIdiomPhone)
-			return JPAdvertisementHandheldLandscape;
-		else if (idiom == UIUserInterfaceIdiomPad)
-			return JPAdvertisementTabletLandscape;
-	}
-	return nil;
-}
+CGSize adWebViewNormalSize = {300, 250};
+NSString* adButtonNormalText = @"Continue";
 
 @interface JPAdvertisementBannerViewController ()
 
@@ -74,11 +59,21 @@ static NSString *contentSizeIdentifierForCurrentInterface() {
 @implementation JPAdvertisementBannerViewController
 
 @synthesize adButton;
+@synthesize adWebView;
+@synthesize adWebBackgroundView;
+
+@synthesize adWebViewController;
 
 @synthesize adURL, linkShareURL;
 @synthesize affiliatedLink;
 
 @synthesize adImagePortrait, adImageLandscape;
+
+@synthesize adButtonType;
+@synthesize adWebViewSize;
+@synthesize adWebViewLoaded;
+@synthesize adWebViewURL;
+@synthesize adViewButtonText;
 
 @synthesize requiredContentSizeIdentifiers, currentContentSizeIdentifier;
 
@@ -120,30 +115,66 @@ static NSString *contentSizeIdentifierForCurrentInterface() {
 #pragma mark - Advertisement handling
 
 - (void) adTapped:(UIButton *) sender {
-	if (affiliatedLink) {
-		[self openReferralURL:self.adURL];
-	} else { 
-		if ([[UIApplication sharedApplication] canOpenURL:self.adURL]) {
-			if (self.adClicked)
-				self.adClicked();
-			[[UIApplication sharedApplication] openURL:self.adURL];
-		} else
-			if (self.clickThroughFailed)
-				self.clickThroughFailed();
-	}
+    if (adButtonType == JPAdvertisementAdImageButton){
+        if (affiliatedLink) {
+            [self openReferralURL:self.adURL];
+        } else {
+            if ([[UIApplication sharedApplication] canOpenURL:self.adURL]) {
+                if (self.adClicked)
+                    self.adClicked();
+                [[UIApplication sharedApplication] openURL:self.adURL];
+            } else
+                if (self.clickThroughFailed)
+                    self.clickThroughFailed();
+        }
+    } else {
+        if (self.adView_WillAppear)
+            self.adView_WillAppear();
+        self.frame = [self adWebBackgroundViewRectForCurrentInterface:currentContentSizeIdentifier];
+        UIView *backgroundView = [[UIView alloc] initWithFrame:[self adWebBackgroundViewRectForCurrentInterface:currentContentSizeIdentifier]];
+        self.adWebBackgroundView = backgroundView;
+        [self.adWebBackgroundView setBackgroundColor:[UIColor blackColor]];
+        [self.adWebBackgroundView setOpaque:NO];
+        [self.adWebBackgroundView setAlpha:0.7];
+        [self.view addSubview:self.adWebBackgroundView];
+        
+        self.adWebViewController = [[JPAdViewController alloc] initWith:self.adWebViewSize adWebViewURL:adWebViewURL];
+        self.adWebViewController.delegate = self;
+        self.adWebView = self.adWebViewController.view;
+        [self.view addSubview:self.adWebView];
+        self.adWebViewLoaded = TRUE;
+    }
 }
 
+-(void) adView_BeforeClose{
+    if (self.adView_WillDisappear)
+        self.adView_WillDisappear();
+    [self.adWebBackgroundView removeFromSuperview];
+}
+-(void) adView_AfterClose{
+    self.adWebViewLoaded = FALSE;
+}
+
+-(void)adView_Tapped:(NSURL*)adURL{
+    if ([[UIApplication sharedApplication] canOpenURL:self.adURL]) {
+        if (self.adClicked)
+            self.adClicked();
+        [[UIApplication sharedApplication] openURL:self.adURL];
+    } else
+        if (self.clickThroughFailed)
+            self.clickThroughFailed();
+}
 #pragma mark - Ad Sizing
 
 + (CGSize) sizeFromBannerContentSizeIdentifier:(NSString *)contentSizeIdentifier {
 	if (contentSizeIdentifier == JPAdvertisementHandheldLandscape) {
-		return handheldLandscape;
+		return handheldLandscapeSizeForAdButton;
 	} else if (contentSizeIdentifier == JPAdvertisementHandheldPortrait) {
-		return handheldPortraitSize;
+		return handheldPortraitSizeForAdButton;
 	} else if (contentSizeIdentifier == JPAdvertisementTabletLandscape) {
-		return tabletLandscapeSize;
+		return tabletLandscapeSizeForAdButton;
 	} else if (contentSizeIdentifier == JPAdvertisementTabletPortrait) {
-		return tabletPortraitSize;
+		return tabletPortraitSizeForAdButton;
 	} else
 		return CGSizeZero;
 }
@@ -152,6 +183,51 @@ static NSString *contentSizeIdentifierForCurrentInterface() {
 	return [JPAdvertisementBannerViewController sizeFromBannerContentSizeIdentifier:contentSizeIdentifier];
 }
 
++ (CGPoint) adWebViewPointForCurrentInterface:(NSString *)contentSizeIdentifier adWebViewSize:(CGSize) adWebViewSize {
+    CGFloat left = 0;
+    CGFloat top = 0;
+    
+    CGSize deviceSize;
+    
+    if (contentSizeIdentifier == JPAdvertisementHandheldLandscape) {
+		deviceSize = handheldLandscapeSize;
+	} else if (contentSizeIdentifier == JPAdvertisementHandheldPortrait) {
+		deviceSize = handheldPortraitSize;
+	} else if (contentSizeIdentifier == JPAdvertisementTabletLandscape) {
+		deviceSize = tabletLandscapeSize;
+	} else if (contentSizeIdentifier == JPAdvertisementTabletPortrait) {
+		deviceSize = tabletPortraitSize;
+	} else
+		deviceSize = CGSizeZero;
+    
+    left = (deviceSize.width - adWebViewSize.width) / 2;
+    top = (deviceSize.height - adWebViewSize.height) / 2;
+    return (CGPoint){left, top};
+}
+ - (CGPoint) adWebViewPointForCurrentInterface:(NSString *)contentSizeIdentifier adWebViewSize:(CGSize) adWebViewSize {
+     return [JPAdvertisementBannerViewController adWebViewPointForCurrentInterface:contentSizeIdentifier adWebViewSize:self.adWebViewSize];
+ }
++ (CGRect) adWebBackgroundViewRectForCurrentInterface:(NSString *)contentSizeIdentifier{
+    
+    CGSize deviceSize;
+    
+    if (contentSizeIdentifier == JPAdvertisementHandheldLandscape) {
+		deviceSize = handheldLandscapeSize;
+	} else if (contentSizeIdentifier == JPAdvertisementHandheldPortrait) {
+		deviceSize = handheldPortraitSize;
+	} else if (contentSizeIdentifier == JPAdvertisementTabletLandscape) {
+		deviceSize = tabletLandscapeSize;
+	} else if (contentSizeIdentifier == JPAdvertisementTabletPortrait) {
+		deviceSize = tabletPortraitSize;
+	} else
+		deviceSize = CGSizeZero;
+    
+    return (CGRect){0, 0, deviceSize.width, deviceSize.height};
+}
+
+- (CGRect) adWebBackgroundViewRectForCurrentInterface:(NSString *)contentSizeIdentifier{
+    return [JPAdvertisementBannerViewController adWebBackgroundViewRectForCurrentInterface:contentSizeIdentifier];
+}
 #pragma mark - LinkShare
 
 // Process a LinkShare/TradeDoubler/DGM URL to something iPhone can handle
@@ -214,6 +290,7 @@ static NSString *contentSizeIdentifierForCurrentInterface() {
 	self = [super init];
 	if (self) {
 		currentContentSizeIdentifier = contentSizeIdentifierForCurrentInterface();
+        adButtonType = JPAdvertisementAdImageButton;
 		CGSize viewSize = [self sizeFromBannerContentSizeIdentifier:currentContentSizeIdentifier];
 		self.view.frame = (CGRect) {laPoint, viewSize};
 		
@@ -225,10 +302,48 @@ static NSString *contentSizeIdentifierForCurrentInterface() {
 	return self;
 }
 
+- (id) initWithWebView:(NSString*)adViewURL{
+	return [self initWithWebView:adViewURL adViewSize:adWebViewNormalSize adButtonText:adButtonNormalText];
+}
+
+- (id) initWithWebView:(NSString*)adViewURL adViewSize:(CGSize)adViewSize{
+	return [self initWithWebView:adViewURL adViewSize:adViewSize adButtonText:adButtonNormalText];
+}
+
+- (id) initWithWebView:(NSString*)adViewURL adButtonText:(NSString*)adButtonText{
+	return [self initWithWebView:adViewURL adViewSize:adWebViewNormalSize adButtonText:adButtonText];
+}
+
+- (id) initWithWebView:(NSString*)adViewURL adViewSize:(CGSize)adViewSize adButtonText:(NSString*)adButtonText{
+	self = [super init];
+	if (self) {
+		currentContentSizeIdentifier = contentSizeIdentifierForCurrentInterface();
+        self.adButtonType = JPAdvertisementAdNormalButton;
+        self.adWebViewSize = adViewSize;
+        self.adViewButtonText = adButtonText;
+        self.adWebViewURL = adViewURL;
+        
+		CGSize viewSize = [self sizeFromBannerContentSizeIdentifier:currentContentSizeIdentifier];
+		self.view.frame = (CGRect) {CGPointZero, viewSize};
+		
+		UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        button.frame = (CGRect) {CGPointZero, viewSize};
+        self.adButton = button;
+		[self.adButton addTarget:self action:@selector(adTapped:) forControlEvents:UIControlEventTouchUpInside];
+        [self.adButton setTitle:adButtonText forState:UIControlStateNormal];
+		[self.view addSubview:adButton];
+        
+        self.adWebViewLoaded = FALSE;
+	}
+	return self;
+}
+
 #pragma mark - Dealloc
 
 - (void)dealloc {
 	adButton = nil;
+    adWebView = nil;
+    adWebBackgroundView = nil;
 	adURL = nil;
 	linkShareURL = nil;
 	
@@ -291,20 +406,23 @@ static NSString *contentSizeIdentifierForCurrentInterface() {
 
 
 - (void) layoutAdForCurrentOrientation {
-	UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
-	UIImage *adImage = nil;
-	
-	if (UIInterfaceOrientationIsPortrait(orientation))
-		adImage = [UIImage imageNamed:adImagePortrait];
-	else if (UIInterfaceOrientationIsLandscape(orientation))
-		adImage = [UIImage imageNamed:adImageLandscape];
-	
-	currentContentSizeIdentifier = contentSizeIdentifierForCurrentInterface();
-	[self.adButton setImage:adImage forState:UIControlStateNormal];
-	
-	[self.adButton setNeedsDisplay];
+    if (adButtonType == JPAdvertisementAdImageButton) {
+        UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+        UIImage *adImage = nil;
+        
+        if (UIInterfaceOrientationIsPortrait(orientation))
+            adImage = [UIImage imageNamed:adImagePortrait];
+        else if (UIInterfaceOrientationIsLandscape(orientation))
+            adImage = [UIImage imageNamed:adImageLandscape];
+        
+        currentContentSizeIdentifier = contentSizeIdentifierForCurrentInterface();
+        [self.adButton setImage:adImage forState:UIControlStateNormal];
+        
+        [self.adButton setNeedsDisplay];
+    }else {
+        currentContentSizeIdentifier = contentSizeIdentifierForCurrentInterface();
+    }
 }
-
 
 - (void) deviceRotated:(id) sender {
 	
@@ -312,10 +430,20 @@ static NSString *contentSizeIdentifierForCurrentInterface() {
 	
 	CGSize size = [self sizeFromBannerContentSizeIdentifier:currentContentSizeIdentifier];
 	CGRect newFrame = {0,0, size};
-	
+	CGRect newAdWebBackgroundViewFrame = [self adWebBackgroundViewRectForCurrentInterface:currentContentSizeIdentifier];
+    CGRect newAdWebViewFrame = (CGRect){[self adWebViewPointForCurrentInterface:currentContentSizeIdentifier adWebViewSize:self.adWebViewSize], self.adWebViewSize};
+    
+    
 	[UIView animateWithDuration:0.2 animations:^(void) {
+        self.frame = newAdWebBackgroundViewFrame;
 		self.view.frame = (CGRect) {self.view.frame.origin, size};
 		self.adButton.frame = newFrame;
+        
+        if (self.adWebViewLoaded){
+            self.adWebView.frame = newAdWebViewFrame;
+            self.adWebBackgroundView.frame = newAdWebBackgroundViewFrame;
+         }
+
 	}];
 }
 

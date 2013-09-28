@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0619F9031386ECDF00C27453 /* JPAdvertisementBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0619F8FF1386ECDF00C27453 /* JPAdvertisementBannerViewController.m */; };
 		061B74831398096E00D7EF79 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 061B74811398096E00D7EF79 /* MainWindow-iPad.xib */; };
 		068ECB6F1386D7750012C46C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 068ECB6E1386D7750012C46C /* UIKit.framework */; };
 		068ECB711386D7750012C46C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 068ECB701386D7750012C46C /* Foundation.framework */; };
@@ -18,6 +17,8 @@
 		068ECB821386D7750012C46C /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 068ECB801386D7750012C46C /* MainWindow.xib */; };
 		068ECB9E1386DC5C0012C46C /* JPStandInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 068ECB9C1386DC5C0012C46C /* JPStandInViewController.m */; };
 		068ECB9F1386DC5C0012C46C /* JPAdvertisementPlaygroundViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 068ECB9D1386DC5C0012C46C /* JPAdvertisementPlaygroundViewController.xib */; };
+		8A64B3BF17F4EE8900231F38 /* JPAdvertisementBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A64B3BE17F4EE8900231F38 /* JPAdvertisementBannerViewController.m */; };
+		8A64B3C217F4F1C500231F38 /* JPAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A64B3C117F4F1C500231F38 /* JPAdViewController.m */; };
 		D888211D13F05F6400FBA136 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = D888211C13F05F6400FBA136 /* LICENSE */; };
 		D89FF068148B0DC200D1BAD5 /* Grades_appstore.plist in Resources */ = {isa = PBXBuildFile; fileRef = D89FF066148B0DC200D1BAD5 /* Grades_appstore.plist */; };
 		D89FF069148B0DC200D1BAD5 /* Grades_website.plist in Resources */ = {isa = PBXBuildFile; fileRef = D89FF067148B0DC200D1BAD5 /* Grades_website.plist */; };
@@ -42,8 +43,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0619F8FE1386ECDF00C27453 /* JPAdvertisementBannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPAdvertisementBannerViewController.h; sourceTree = "<group>"; };
-		0619F8FF1386ECDF00C27453 /* JPAdvertisementBannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPAdvertisementBannerViewController.m; sourceTree = "<group>"; };
 		061B74821398096E00D7EF79 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "iPad/en.lproj/MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		068ECB6A1386D7750012C46C /* JPAdvertisement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JPAdvertisement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		068ECB6E1386D7750012C46C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -59,6 +58,11 @@
 		068ECB9B1386DC5C0012C46C /* JPStandInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPStandInViewController.h; sourceTree = "<group>"; };
 		068ECB9C1386DC5C0012C46C /* JPStandInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPStandInViewController.m; sourceTree = "<group>"; };
 		068ECB9D1386DC5C0012C46C /* JPAdvertisementPlaygroundViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JPAdvertisementPlaygroundViewController.xib; sourceTree = "<group>"; };
+		8A64B3BD17F4EE8900231F38 /* JPAdvertisementBannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JPAdvertisementBannerViewController.h; path = JPAdvertisement/JPAdvertisementBannerViewController.h; sourceTree = SOURCE_ROOT; };
+		8A64B3BE17F4EE8900231F38 /* JPAdvertisementBannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JPAdvertisementBannerViewController.m; path = JPAdvertisement/JPAdvertisementBannerViewController.m; sourceTree = SOURCE_ROOT; };
+		8A64B3C017F4F1C500231F38 /* JPAdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPAdViewController.h; sourceTree = "<group>"; };
+		8A64B3C117F4F1C500231F38 /* JPAdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPAdViewController.m; sourceTree = "<group>"; };
+		8A64B3C317F4F6E000231F38 /* JPAdvertisementConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JPAdvertisementConstants.h; sourceTree = "<group>"; };
 		D888211C13F05F6400FBA136 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		D89FF066148B0DC200D1BAD5 /* Grades_appstore.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Grades_appstore.plist; path = "JPAdvertisement/Grades Sample Ad/Grades_appstore.plist"; sourceTree = SOURCE_ROOT; };
 		D89FF067148B0DC200D1BAD5 /* Grades_website.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Grades_website.plist; path = "JPAdvertisement/Grades Sample Ad/Grades_website.plist"; sourceTree = SOURCE_ROOT; };
@@ -99,8 +103,8 @@
 		0619F8FD1386ECDF00C27453 /* JPAdvert */ = {
 			isa = PBXGroup;
 			children = (
-				0619F8FE1386ECDF00C27453 /* JPAdvertisementBannerViewController.h */,
-				0619F8FF1386ECDF00C27453 /* JPAdvertisementBannerViewController.m */,
+				8A64B3BD17F4EE8900231F38 /* JPAdvertisementBannerViewController.h */,
+				8A64B3BE17F4EE8900231F38 /* JPAdvertisementBannerViewController.m */,
 			);
 			path = JPAdvert;
 			sourceTree = "<group>";
@@ -146,6 +150,7 @@
 		068ECB741386D7750012C46C /* JPAdvertisement */ = {
 			isa = PBXGroup;
 			children = (
+				8A64B3B617F4ECF800231F38 /* JPAdView */,
 				061B74801398096D00D7EF79 /* iPad */,
 				D8E1579113DDE3F900EA4C72 /* Icons */,
 				068ECBAD1386DEE80012C46C /* Grades Sample Ad */,
@@ -153,6 +158,7 @@
 				068ECBA11386DE510012C46C /* Delegate */,
 				068ECBA01386DC610012C46C /* Holder view */,
 				068ECB751386D7750012C46C /* Supporting Files */,
+				8A64B3C317F4F6E000231F38 /* JPAdvertisementConstants.h */,
 			);
 			path = JPAdvertisement;
 			sourceTree = "<group>";
@@ -204,6 +210,15 @@
 			);
 			name = "Grades Sample Ad";
 			path = Grades;
+			sourceTree = "<group>";
+		};
+		8A64B3B617F4ECF800231F38 /* JPAdView */ = {
+			isa = PBXGroup;
+			children = (
+				8A64B3C017F4F1C500231F38 /* JPAdViewController.h */,
+				8A64B3C117F4F1C500231F38 /* JPAdViewController.m */,
+			);
+			name = JPAdView;
 			sourceTree = "<group>";
 		};
 		D8E1579113DDE3F900EA4C72 /* Icons */ = {
@@ -327,8 +342,9 @@
 			files = (
 				068ECB7C1386D7750012C46C /* main.m in Sources */,
 				068ECB7F1386D7750012C46C /* JPAdvertisementAppDelegate.m in Sources */,
+				8A64B3C217F4F1C500231F38 /* JPAdViewController.m in Sources */,
+				8A64B3BF17F4EE8900231F38 /* JPAdvertisementBannerViewController.m in Sources */,
 				068ECB9E1386DC5C0012C46C /* JPStandInViewController.m in Sources */,
-				0619F9031386ECDF00C27453 /* JPAdvertisementBannerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
